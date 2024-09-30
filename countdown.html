@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <title>Timer Master</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="./home.html">Home</a>
+        <a href="./FAQ.html">FAQ</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./about.html">About</a>
+      </div>
+    </header>
+    <br />
+    <br />
+    <br />
+
+    <!--   title -->
+    <h1 class="title">Countdown Timer</h1>
+    <div id="countdownTimer"></div>
+    <form id="frm1">
+        <input placeholder="Hours" type="number" id="inputBoxHours" name="hours" max = "23" length = "2">
+        <input placeholder="Minutes"type="number" id="inputBoxMinutes" name="minutes" max="59" length = "2">
+        <input placeholder="Seconds" type="number" id="inputBoxSeconds" name="seconds" max="59" length = "2">
+        <button id="submitInputBox" type="button" onclick="submitTime()">Start</button> 
+        <button id="pauseTimer">Pause</button>
+        <button id="resetTimer">Reset</button> 
+    </form>
+
+    <br />
+    <br />
+    <footer class="footer">
+      <small
+        >Copyright 2024 by the developers of Timer Master. All rights reserved.
+        Not to be copied without permission.</small
+      >
+     
+    </footer>
+
+    <!--   javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>

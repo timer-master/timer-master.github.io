@@ -1,0 +1,175 @@
+/* General Formatting */
+body,
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #93ccea;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* Center Alignment */
+.center {
+  text-align: center;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 10;
+  right: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 28px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #93ccea;
+  color: black;
+}
+
+/* Homepage Styling */
+.title {
+  margin: 5px;
+  font-size: 50;
+}
+
+/* Footer */
+.footer {
+  color: red;
+  padding-top: 25px;
+  text-align: center;
+}
+
+/* About Page Styling */
+.about {
+  text-align: left;
+}
+
+/* FAQ Page Styling */
+.FAQ {
+  margin: 10px;
+}
+
+/* FAQ Dropdowns */
+.dropdownTitle {
+  width: 90%;
+  border: 1px solid black;
+  font-size: 20px;
+  background-color: #dfe7f0;
+  text-align: left;
+  border-radius: 10px;
+  padding: 5px;
+  line-height: 1.5;
+}
+
+.dropdownText {
+  width: 90%;
+  font-size: 20px;
+  margin: auto;
+  border: 1px solid black;
+  background-color: #bdc7d1;
+  text-align: left;
+  border-radius: 10px;
+  padding: 5px;
+  line-height: 1.5;
+}
+
+.dropdownTitle:hover {
+  cursor: pointer;
+  color: blue;
+  border: 1px solid blue;
+}
+
+/* Countdown Timer Interface */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+.base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+#submitInputBox {
+  font-size: 20 px;
+  background-color: rgb(65, 184, 131);
+  border-color: #93ccea;
+}
+
+#pauseTimer {
+  font-size: 20 px;
+  background-color: rgb(198, 80, 80);
+  border-color: #93ccea;
+}
+
+#resetTimer {
+  font-size: 20 px;
+  background-color: #93ccea;
+  border-color: #93ccea;
+}
