@@ -17,6 +17,7 @@ html {
 .navbar {
   overflow: hidden;
   background-color: #005F99;
+  width: 100%;
 }
 
 .navbar a {
