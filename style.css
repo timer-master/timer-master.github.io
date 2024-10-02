@@ -156,7 +156,6 @@ html {
 
 /* Countdown Timer Interface */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: grid;
   place-items: center;
 }
