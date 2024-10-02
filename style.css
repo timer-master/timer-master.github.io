@@ -18,6 +18,10 @@ html {
   overflow: hidden;
   background-color: #005F99;
   width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .navbar a {
