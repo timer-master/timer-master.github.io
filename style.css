@@ -110,7 +110,6 @@ html {
   font-size: 20px;
   background-color: #dfe7f0;
   text-align: left;
-  border-radius: 10px;
   padding: 5px;
   line-height: 1.5;
 }
@@ -122,7 +121,6 @@ html {
   border: 1px solid black;
   background-color: #bdc7d1;
   text-align: left;
-  border-radius: 10px;
   padding: 5px;
   line-height: 1.5;
 }
