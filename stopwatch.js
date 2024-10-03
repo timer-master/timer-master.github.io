@@ -1,10 +1,4 @@
-// Dropdown Menu
-function reveal(id) {
-    const element = document.getElementById(id);
-    element.style.display = element.style.display == "none" ? "" : "none";
-  }
-  
-  //STOPWATCH
+   //STOPWATCH
   //variables
   let timePassed = 0;
   let timerInterval = null;
@@ -13,6 +7,21 @@ function reveal(id) {
   document.getElementById("stopwatch").innerHTML = `
   <div class="base-timer">
     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g class="base-timer__circle">
+        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+        <path
+          id="base-timer-path-remaining"
+          stroke-dasharray="283"
+          class="base-timer__path-remaining ${remainingPathColor}"
+          d="
+            M 50, 50
+            m -45, 0
+            a 45,45 0 1,0 90,0
+            a 45,45 0 1,0 -90,0
+          "
+        ></path>
+      </g>
+      </svg>
     )}</span>
   </div>
   `;
@@ -53,6 +62,9 @@ function reveal(id) {
       seconds = `0${seconds}`;
     }
     return `${minutes}:${seconds}`;
+  }
+  function submitTime() {
+    startTimer(); // Start timer
   }
   // Pause Timer
   document.getElementById("pauseTimer").addEventListener("click", function () {
