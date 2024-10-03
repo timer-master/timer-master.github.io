@@ -87,7 +87,10 @@ function startTimer() {
     updateTimerDisplay(); // Update the display with the initial timeLeft
   });
 }
+var audio = document.getElementById("alarmAudio"); 
+
 function onTimesUp() {
+  audio.play();
   clearInterval(timerInterval);
 }
 function formatTime(time) {
