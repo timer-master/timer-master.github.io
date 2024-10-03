@@ -195,17 +195,14 @@ body {
 #submitInputBox {
   font-size: 20 px;
   background-color: rgb(65, 184, 131);
-  border-color: #93ccea;
 }
 
 #pauseTimer {
   font-size: 20 px;
-  background-color: rgb(198, 80, 80);
-  border-color: #93ccea;
+  background-color: color: red;
 }
 
 #resetTimer {
   font-size: 20 px;
   background-color: #93ccea;
-  border-color: #93ccea;
 }
