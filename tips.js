@@ -51,8 +51,11 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function getTip() {
+function setTip() {
   const ll = timeManagementTips.length;
   const a = getRandomInt(1, ll - 1);
-  return timeManagementTips[a];
+  const b = timeManagementTips[a];
+  document.querySelector("#tipid").innerHTML = b;
 }
+
+setTip();
