@@ -1,11 +1,10 @@
 /* Countdown Timer Interface */
-.countdownTimer {
+#countdownTimer {
   margin-top: 20px;
-}
-.body {
   display: grid; 
   place-items: center;
 }
+
 .base-timer {
   position: relative;
   width: 300px;
