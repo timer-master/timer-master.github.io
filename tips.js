@@ -30,7 +30,27 @@ const timeManagementTips = [
   "Use apps for tracking.",
   "Stay healthy (exercise, sleep).",
   "Be productive.",
+  "Delegate tasks when possible.",
+  "Minimize perfectionism.",
+  "Avoid procrastination.",
+  "Start with the most challenging task first.",
+  "Identify your peak productivity hours.",
+  "Take notes to capture ideas.",
+  "Automate repetitive tasks.",
+  "Review and adjust your plans weekly.",
+  "Break down long-term goals into milestones.",
+  "Avoid unnecessary commitments.",
+  "Work in focused sprints.",
+  "Use a 'Do Not Disturb' sign when working.",
+  "Limit your social media time.",
+  "Focus on outcomes, not activities.",
+  "Identify and avoid your time sinks.",
+  "Practice mindfulness to improve concentration.",
+  "Keep an 'ideas' journal to stay focused on your current task.",
+  "Find accountability partners.",
+  "If a task takes two minutes or less, do it immediately."
 ];
+
 
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
