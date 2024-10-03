@@ -134,11 +134,12 @@ html {
 }
 
 /* Countdown Timer Interface */
-body {
-  display: grid;
-  place-items: center;
+.countdownTimer {
+  margin-top: 20px;
 }
-
+.body {
+  padding-top: 70px;
+}
 .base-timer {
   position: relative;
   width: 300px;
