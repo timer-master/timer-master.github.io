@@ -55,7 +55,7 @@ function setTip() {
   const ll = timeManagementTips.length;
   const a = getRandomInt(1, ll - 1);
   const b = timeManagementTips[a];
-  document.querySelector("#tipid").innerHTML = b;
+  document.getElementById("tipid").innerHTML = b;
 }
 
 setTip();
