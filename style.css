@@ -132,3 +132,9 @@ html {
   color: blue;
   border: 1px solid blue;
 }
+
+#tipid{
+  border: 2px solid black;
+  padding: 7px;
+  background-color: #D0D3D4;
+}
