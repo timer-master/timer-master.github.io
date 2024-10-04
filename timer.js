@@ -133,13 +133,16 @@ function setCircleDasharray() {
 }
 // Error Alerts  
 function hoursTooLong() {
-  alert("ERROR! The maximum hours is 23. To set a timer for a multiple days, use our Countdown feature.");
+  alert("ERROR. The maximum hours is 23. To set a timer for a multiple days, use our Countdown feature.");
+}
+function hoursTooShort() {
+  alert("ERROR. Please do not input a negative number.");
 }
 function minutesTooLong() {
-  alert("ERROR! The maximum minutes is 59.");
+  alert("ERROR. Please input a number from 0 to 59.");
 }
 function secondsTooLong() {
-  alert("ERROR! The maximum seconds is 59.");
+  alert("ERROR. Please input a number from 0 to 59.");
 }
 
 // Submit Time and Initialize Timer
@@ -148,10 +151,13 @@ function submitTime() {
   if (document.getElementById("inputBoxHours").value > 23) {
     hoursTooLong();
   }
-  else if (document.getElementById("inputBoxMinutes").value > 59) {
+  else if (document.getElementById("inputBoxHours").value < 0) {
+    hoursTooShort();
+  }
+  else if (document.getElementById("inputBoxMinutes").value > 59 or document.getElementById("inputBoxMinutes").value < 0) {
     minutesTooLong();
   }
-  else if (document.getElementById("inputBoxSeconds").value > 59) {
+  else if (document.getElementById("inputBoxSeconds" or document.getElementById("inputBoxMinutes").value < 0).value > 59) {
     secondsTooLong();
   }
 
