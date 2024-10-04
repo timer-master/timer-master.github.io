@@ -59,21 +59,21 @@
 }
 
 #submitInputBox {
-  font-size: 20 px;
+  font-size: 4%;
   border: none;
   width: 5%
   background-color: rgb(65, 184, 131);
 }
 
 #pauseTimer {
-  font-size: 20 px;
+  font-size: 4%;
   background-color: red;
   width: 5%
   border: none;
 }
 
 #resetTimer {
-  font-size: 20 px;
+  font-size: 4%;
   background-color: #93ccea;
   width: 5%
   border: none;
@@ -88,21 +88,21 @@
 
 #inputBoxHours{
   background-color: #D0D3D4;
-  border: 2px solide black;
+  border: 2px solid #00BFFF;
   padding: 5px;
   width: 5%;
 }
 
 #inputBoxMinutes{
   background-color: #D0D3D4;
-  border: 2px solide black;
+  border: 2px solid #00BFFF;
   padding: 5px;
   width: 5%;
 }
 
 #inputBoxSeconds{
   background-color: #D0D3D4;
-  border: 2px solide black;
+  border: 2px solid #00BFFF;
   padding: 5px;
   width: 5%;
 }
