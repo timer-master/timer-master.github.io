@@ -132,7 +132,8 @@ html {
 }
 
 #tipid{
-  padding: 5px;
+  padding: 10px;
   background-color: #D0D3D4;
   border-radius: 10px;
+  border: 2px solid #1C2833;
 }
