@@ -46,7 +46,6 @@ const timeManagementTips = [
   "Focus on outcomes, not activities.",
   "Identify and avoid your time sinks.",
   "Practice mindfulness to improve concentration.",
-  "Keep an 'ideas' journal to stay focused on your current task.",
   "Find accountability partners.",
   "If a task takes two minutes or less, do it immediately."
 ];
