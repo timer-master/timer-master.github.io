@@ -59,21 +59,21 @@
 }
 
 #submitInputBox {
-  font-size: 4%;
+  font-size: 25px;
   border: none;
   width: 5%
   background-color: rgb(65, 184, 131);
 }
 
 #pauseTimer {
-  font-size: 4%;
+  font-size: 25px;
   background-color: red;
   width: 5%
   border: none;
 }
 
 #resetTimer {
-  font-size: 4%;
+  font-size: 25px;
   background-color: #93ccea;
   width: 5%
   border: none;
