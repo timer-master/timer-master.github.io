@@ -106,9 +106,8 @@ html {
 /* FAQ Dropdowns */
 .dropdownTitle {
   width: 90%;
-  border: 2px solid #00BFFF;
   font-size: 20px;
-  background-color: #dfe7f0;
+  background-color: #D0D3D4;
   text-align: left;
   padding: 5px;
   line-height: 1.5;
@@ -119,8 +118,7 @@ html {
   width: 90%;
   font-size: 20px;
   margin: auto;
-  border: 2px solid #00BFFF;
-  background-color: #D0D3D4;
+  background-color: #dfe7f0;
   text-align: left;
   padding: 5px;
   line-height: 1.5;
@@ -134,7 +132,6 @@ html {
 }
 
 #tipid{
-  border: 2px solid #00BFFF;
   padding: 5px;
   background-color: #D0D3D4;
   border-radius: 10px;
