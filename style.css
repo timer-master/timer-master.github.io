@@ -126,7 +126,7 @@ html {
 .dropdownTitle:hover {
   cursor: pointer;
   color: blue;
-  border: 2px solid blue;
+  border: 2px solid #97DEFB;
 }
 
 /* Homepage Daily Tip Styling */
