@@ -119,6 +119,7 @@
   padding: 10px;
   margin: 5px;
   width: 8%;
+  text-size: 10px;
 }
 
 #inputBoxMinutes{
@@ -127,6 +128,7 @@
   padding: 10px;
   margin: 5px;
   width: 8%;
+  text-size: 10px;
 }
 
 #inputBoxSeconds{
@@ -135,6 +137,7 @@
   padding: 10px;
   margin: 5px;
   width: 8%;
+  text-size: 10px;
 }
 
 /* General Formatting */
