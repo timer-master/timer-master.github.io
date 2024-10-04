@@ -131,9 +131,11 @@ html {
   border: 2px solid blue;
 }
 
+/* Homepage Daily Tip Styling */
 #tipid{
-  padding: 10px;
+  padding: 20px;
   background-color: #D0D3D4;
   border-radius: 10px;
   border: 2px solid #1C2833;
+  width: 50%;
 }
