@@ -106,7 +106,7 @@ html {
 /* FAQ Dropdowns */
 .dropdownTitle {
   width: 90%;
-  border: 3px solid black;
+  border: 2px solid #00BFFF;
   font-size: 20px;
   background-color: #dfe7f0;
   text-align: left;
@@ -119,21 +119,22 @@ html {
   width: 90%;
   font-size: 20px;
   margin: auto;
-  border: 3px solid black;
+  border: 2px solid #00BFFF;
   background-color: #D0D3D4;
   text-align: left;
   padding: 5px;
   line-height: 1.5;
+  border-radius: 10px;
 }
 
 .dropdownTitle:hover {
   cursor: pointer;
   color: blue;
-  border: 3px solid blue;
+  border: 2px solid blue;
 }
 
 #tipid{
-  border: 3px solid black;
+  border: 2px solid #00BFFF;
   padding: 5px;
   background-color: #D0D3D4;
   border-radius: 10px;
