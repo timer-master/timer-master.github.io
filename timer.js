@@ -157,7 +157,7 @@ function submitTime() {
   else if (document.getElementById("inputBoxMinutes").value > 59 || document.getElementById("inputBoxMinutes").value < 0) {
     minutesTooLong();
   }
-  else if (document.getElementById("inputBoxSeconds" or document.getElementById("inputBoxMinutes").value || 0).value > 59) {
+  else if (document.getElementById("inputBoxSeconds").value > 59 || document.getElementById("inputBoxMinutes").value < 0) {
     secondsTooLong();
   }
 
