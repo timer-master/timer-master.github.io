@@ -83,6 +83,24 @@
   background-color: #D0D3D4;
 }
 
+#inputBoxHours{
+  color: #D0D3D4;
+  border: 2px solide black;
+  padding: 5px;
+}
+
+#inputBoxMinutes{
+  color: #D0D3D4;
+  border: 2px solide black;
+  padding: 5px;
+}
+
+#inputBoxSeconds{
+  color: #D0D3D4;
+  border: 2px solide black;
+  padding: 5px;
+}
+
 
 /* General Formatting */
 body,
