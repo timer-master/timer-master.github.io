@@ -73,7 +73,8 @@ function startTimer() {
   }, 1000);
   
     // Add event listener for "Pause" button after the timer is started
-    document.getElementById("pauseTimer").addEventListener("click", function () {
+    document.getElementById("pauseTimer").addEventListener("click", function (e) {
+      e.preventDefault();
       clearInterval(timerInterval); // Pause the timer
       isPaused = true; // Set pause state flag
     });
@@ -175,7 +176,8 @@ function submitTime() {
   }
 }
 // Pause Timer
-document.getElementById("pauseTimer").addEventListener("click", function () {
+document.getElementById("pauseTimer").addEventListener("click", function (e) {
+  e.preventDefault();
   clearInterval(timerInterval);
   isPaused = true; // Set pause state flag
 });
