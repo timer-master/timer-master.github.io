@@ -34,6 +34,11 @@ html {
   text-decoration: none;
 }
 
+.navbar a:hover{
+  background-color: #26303e;
+  color: black;
+}
+
 .dropdown {
   float: left;
   overflow: hidden;
@@ -50,7 +55,7 @@ html {
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn {
   background-color: #93ccea;
   color: black;
 }
