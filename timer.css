@@ -113,6 +113,15 @@
   background-color: #D0D3D4;
 }
 
+#inputBoxDays{
+  background-color: #D0D3D4;
+  border: 2px solid #00BFFF;
+  padding: 10px;
+  margin: 5px;
+  width: 8%;
+  text-size: 10px;
+}
+
 #inputBoxHours{
   background-color: #D0D3D4;
   border: 2px solid #00BFFF;
@@ -138,6 +147,16 @@
   margin: 5px;
   width: 8%;
   text-size: 10px;
+}
+
+
+#countdown {
+  border: 2px solid ;
+  font-size: 30px;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
 }
 
 /* General Formatting */

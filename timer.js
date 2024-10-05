@@ -82,7 +82,6 @@ function startTimer() {
     document.getElementById("resetTimer").addEventListener("click", function () {
       clearInterval(timerInterval);
       timeLeft = TIME_LIMIT;
-      timePassed = 0;
       isPaused = false; // Reset pause state
       updateTimerDisplay(); // Update the display with the initial timeLeft
     });
@@ -188,7 +187,6 @@ document.getElementById("resumeTimer").addEventListener("click", function () {
 document.getElementById("resetTimer").addEventListener("click", function () {
   clearInterval(timerInterval);
   timeLeft = TIME_LIMIT;
-  timePassed = 0;
   isPaused = false;
   updateTimerDisplay(); // Update the display with the initial timeLeft
 });
