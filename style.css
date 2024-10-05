@@ -22,24 +22,29 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
 }
+
+
 .logoImg{
   background-color: #26303e;
 }
 
 .navbar a {
   float: left;
-  font-size: 16px;
+  font-size: 23px;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding-top: 17px;
+  padding-bottom: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
   text-decoration: none;
 }
 
 .navbar a:hover{
   background-color:  #93ccea;
-  color: white;
+  color: black;
+  padding-bottom: 22px;
 }
 
 .dropdown {
@@ -47,22 +52,27 @@ html {
   overflow: hidden;
 }
 
-.dropdown .dropbtn {
-  font-size: 16px;  
+.dropdown .dropbtn{
+  font-size: 23px;  
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
+  padding-top: 17px;
+  padding-bottom: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
   background-color: inherit;
-  font-family: inherit;
   margin: 0;
 }
 
 .dropdown:hover .dropbtn {
   background-color: #93ccea;
+  padding-bottom: 22px;
   color: black;
 }
 
+
+/* FAQ Dropdown */
 .dropdown-content {
   display: none;
   position: fixed;
