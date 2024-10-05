@@ -8,6 +8,10 @@ html {
   font-size: 18px;
 }
 
+.title {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
 /* Center Alignment */
 .center {
   text-align: center;
