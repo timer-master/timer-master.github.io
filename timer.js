@@ -53,25 +53,24 @@ document.getElementById("countdownTimer").innerHTML = `
 
 // Timer Functions
 function startTimer() {
-  if (timePassed >= 1){
     timerInterval = setInterval(() => {
-      // Only increment timePassed if not paused
-      if (!isPaused && timeLeft != 0) {
-        timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    // Only increment timePassed if not paused
+    if (!isPaused && timeLeft != 0) {
+      timePassed += 1;
+    }
+    document.getElementById("base-timer-label").innerHTML =
+      formatTime(timeLeft);
+     setCircleDasharray();
+    if (timeLeft <= ALERT_THRESHOLD) {
+      setRemainingPathColor(timeLeft); // Call setRemainingPathColor only when necessary
+      if (timeLeft === 0) {
+        onTimesUp();
       }
-      timeLeft = TIME_LIMIT - timePassed;
-      document.getElementById("base-timer-label").innerHTML =
-        formatTime(timeLeft);
-      setCircleDasharray();
-      if (timeLeft <= ALERT_THRESHOLD) {
-        setRemainingPathColor(timeLeft); // Call setRemainingPathColor only when necessary
-        if (timeLeft === 0) {
-          onTimesUp();
-        }
-      } else if (timeLeft <= WARNING_THRESHOLD) {
-        setRemainingPathColor(timeLeft);
-      }
-    }, 1000);
+     } else if (timeLeft <= WARNING_THRESHOLD) {
+      setRemainingPathColor(timeLeft);
+     }
+  }, 1000);
   
     // Add event listener for "Pause" button after the timer is started
     document.getElementById("pauseTimer").addEventListener("click", function () {
@@ -88,7 +87,6 @@ function startTimer() {
       updateTimerDisplay(); // Update the display with the initial timeLeft
     });
   }
-}
 var audio = document.getElementById("alarmAudio"); 
 
 function onTimesUp() {
