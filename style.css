@@ -24,7 +24,7 @@ html {
   right: 0;
   width: 100%;
 }
-.logoLink {
+.navbar a img {
   background-color: #26303e;
 }
 .navbar a {
