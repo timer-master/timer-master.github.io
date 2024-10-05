@@ -55,7 +55,7 @@ document.getElementById("countdownTimer").innerHTML = `
 function startTimer() {
   timerInterval = setInterval(() => {
     // Only increment timePassed if not paused
-    if (!isPaused) {
+    if (!isPaused && timePassed != 0) {
       timePassed += 1;
     }
     timeLeft = TIME_LIMIT - timePassed;
