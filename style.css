@@ -27,9 +27,7 @@ html {
 .logoImg{
   background-color: #26303e;
 }
-.active{
-  background-color:  #93ccea;
-}
+
 .navbar a {
   float: left;
   font-size: 16px;
