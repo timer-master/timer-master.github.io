@@ -24,8 +24,11 @@ html {
   right: 0;
   width: 100%;
 }
-.navbar a img {
+.logoImg{
   background-color: #26303e;
+}
+.active{
+  background-color:  #93ccea;
 }
 .navbar a {
   float: left;
