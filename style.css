@@ -133,7 +133,7 @@ html {
   text-align: left;
   padding: 5px;
   line-height: 1.5;
-  transition-delay:500ms;
+  transition-delay:400ms;
 }
 
 .dropdownText {
@@ -148,8 +148,8 @@ html {
 
 .dropdownTitle:hover {
   cursor: pointer;
-  color: blue;
-  border: 2px solid #97DEFB;
+  color: white;
+  background-color: black;
 }
 
 /* Homepage Daily Tip Styling */
