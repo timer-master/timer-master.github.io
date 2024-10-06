@@ -149,7 +149,7 @@ html {
 .dropdownTitle:hover {
   cursor: pointer;
   color: white;
-  background-color: black;
+  background-color: #005F99;
 }
 
 /* Homepage Daily Tip Styling */
