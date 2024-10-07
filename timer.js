@@ -167,9 +167,12 @@ function submitTime() {
     var seconds = parseInt(document.getElementById("inputBoxSeconds").value) || 0;
     // Calculate total seconds
     var totalSeconds = hours * 3600 + minutes * 60 + seconds;
+    document.getElementById("base-timer-label").innerHTML =
+      formatTime(totalSeconds);
     console.log("Total seconds:", totalSeconds);
     // Update TIME_LIMIT
     TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
+    
     timeLeft = TIME_LIMIT; // Update timeLeft
     startTimer(); // Start timer
   }
