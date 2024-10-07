@@ -1,3 +1,51 @@
+/* Holiday COUNTDOWN */
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+.countdown-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.holiday-countdown {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.holiday-countdown h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.countdown-timer {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .countdown-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .countdown-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* General Formatting */
 body,
 html {
