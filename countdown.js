@@ -51,3 +51,9 @@ function countdownTimer(targetDate) {
   interval = setInterval(updateTimer, 1000);
   updateTimer(); 
 }
+
+function resetCountdown() {
+        clearInterval(interval);
+        location.reload();
+
+}
