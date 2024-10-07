@@ -58,6 +58,53 @@
   font-size: 48px;
 }
 
+.Start {
+/*   font-size: 25px;
+  border: none;
+  width: 5%;
+  background-color: #41B883; */
+  font-size: 20px;
+  border: 2px #00BFFF;
+  width: 7%;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: #41B883;
+}
+
+.Stop {
+/*   font-size: 25px;
+  background-color: red;
+  width: 5%;
+  border: none; */
+  font-size: 20px;
+  border: 2px #00BFFF;
+  width: 7%;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: red;
+}
+
+.Reset {
+/*   font-size: 25px;
+  background-color: #93ccea;
+  width: 5%;
+  border: none; */
+  font-size: 20px;
+  border: 2px #00BFFF;
+  width: 7%;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: #00BFFF;
+}
 #submitInputBox {
 /*   font-size: 25px;
   border: none;
