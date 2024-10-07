@@ -80,10 +80,11 @@ function startTimer() {
   
     // Add event listener for "Reset" button after the timer is started
     document.getElementById("resetTimer").addEventListener("click", function () {
-      clearInterval(timerInterval);
-      timeLeft = TIME_LIMIT;
-      isPaused = false; // Reset pause state
-      updateTimerDisplay(); // Update the display with the initial timeLeft
+      window.location.reload();
+      // clearInterval(timerInterval);
+      // timeLeft = TIME_LIMIT;
+      // isPaused = false; // Reset pause state
+      // updateTimerDisplay(); // Update the display with the initial timeLeft
     });
   }
 var audio = document.getElementById("alarmAudio"); 
@@ -185,10 +186,11 @@ document.getElementById("resumeTimer").addEventListener("click", function () {
 });
 // Reset Timer
 document.getElementById("resetTimer").addEventListener("click", function () {
-  clearInterval(timerInterval);
-  timeLeft = TIME_LIMIT;
-  isPaused = false;
-  updateTimerDisplay(); // Update the display with the initial timeLeft
+  window.location.reload();
+  // clearInterval(timerInterval);
+  // timeLeft = TIME_LIMIT;
+  // isPaused = false;
+  // updateTimerDisplay(); // Update the display with the initial timeLeft
 });
 // Form Event Listener
 document.getElementById("frm1").addEventListener("submit", function (event) {
