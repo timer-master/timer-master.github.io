@@ -13,6 +13,6 @@ function show(id) {
 //Submit reflection prompt
 function submit() {
   location.reload();
-  alert("Your reflection has been submitted.");
+  alert("Submit reflection?");
 }
 
