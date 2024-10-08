@@ -9,7 +9,7 @@
    let count = 0;
    
    startBtn.addEventListener('click', function () {
-    if (count == 0 && second == 0){
+    if (count == 0 && second == 0 || timer == false){
         timer = true;
        stopWatch();
     }    
