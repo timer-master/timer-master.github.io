@@ -182,11 +182,6 @@ document.getElementById("pauseTimer").addEventListener("click", function () {
   clearInterval(timerInterval);
   isPaused = true; // Set pause state flag
 });
-// Resume Timer
-document.getElementById("resumeTimer").addEventListener("click", function () {
-  isPaused = false;
-  startTimer(); // Restart the timer
-});
 // Reset Timer
 document.getElementById("resetTimer").addEventListener("click", function () {
   window.location.reload();
@@ -196,7 +191,7 @@ document.getElementById("resetTimer").addEventListener("click", function () {
   // updateTimerDisplay(); // Update the display with the initial timeLeft
 });
 // Form Event Listener
-document.getElementById("submitInputBox").addEventListener("click", function (event) {
+document.getElementById("submitInputBox").addEventListener("click", function () {
   console.log(timeLeft);
   if(timeLeft==0){
     submitTime(); // Call submitTime directly without preventing default
