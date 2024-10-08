@@ -197,6 +197,7 @@ document.getElementById("resetTimer").addEventListener("click", function () {
 });
 // Form Event Listener
 document.getElementById("submitInputBox").addEventListener("click", function (event) {
+  console.log(timeLeft);
   if(timeLeft==0){
     submitTime(); // Call submitTime directly without preventing default
   }
