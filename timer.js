@@ -196,7 +196,7 @@ document.getElementById("resetTimer").addEventListener("click", function () {
   // updateTimerDisplay(); // Update the display with the initial timeLeft
 });
 // Form Event Listener
-document.getElementById("frm1").addEventListener("submit", function (event) {
+document.getElementById("submitInputBox").addEventListener("submit", function (event) {
   submitTime(); // Call submitTime directly without preventing default
 });
 // Update Timer Display
