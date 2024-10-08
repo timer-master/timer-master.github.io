@@ -197,7 +197,13 @@ document.getElementById("resetTimer").addEventListener("click", function () {
 });
 // Form Event Listener
 document.getElementById("submitInputBox").addEventListener("click", function (event) {
-  submitTime(); // Call submitTime directly without preventing default
+  if(timeLeft==0){
+    submitTime(); // Call submitTime directly without preventing default
+  }
+  else{
+    startTimer();
+  }
+  
 });
 // Update Timer Display
 function updateTimerDisplay() {
