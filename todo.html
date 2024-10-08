@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width", initial-scale="1" />
-    <link rel="stylesheet" href="./timer.css" />
+    <link rel="stylesheet" href="./todo.css" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <title>Countdown</title>
+    <title>To Do</title>
   </head>
 
   <body>
@@ -55,30 +55,27 @@
     <br />
 
     <!--   title -->
-    <h1 class="title">Countdown</h1>
-    <h3>Set Your Countdown Timer</h3>
-    <audio id="alarmAudio">
-        <source src="alarm.mp3" type="audio/mpeg">
-      </audio>
-    <input type="datetime-local" id="dateInput">
-    <br> <br>
-    <div id="countdown"></div>
-      <br>
-      <button onclick="startCountdown()" id="submitInputBox" type="button">
-        Start
-      </button>
-      <button onclick="resetCountdown()" id="resetTimer">Reset</button>
-
-    <br />
-    <br />
+    <h1 class="title">To Do</h1>
+    <p>Plan your entire day by simply add your task and set the time, and we'll remind you with timers and alarms!</p>
+    <div id="myDIV" class="header">
+        <h2 style="margin:5px">My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Add task here:">
+        <input type="datetime-local" id="taskTime" placeholder="Set deadline">
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
+      
+      
+      <ul id="myUL">
+      </ul>
     <footer class="footer">
       <small
         >Copyright 2024 by the developers of Timer Master. All rights reserved.
         Not to be copied without permission.</small
       >
+
     </footer>
 
     <!--   javascript -->
-    <script src="countdown.js"></script>
+    <script src="todo.js"></script>
   </body>
 </html>
