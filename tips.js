@@ -74,7 +74,7 @@ function setTip() {
   const ll = timeManagementTips.length;
   const a = getRandomInt(1, ll - 1);
   const b = timeManagementTips[a];
-  document.getElementById("tipid").innerHTML = "Daily Tip: " + b;
+  document.getElementById("tipid").innerHTML = "Tip: " + b;
 }
 
 setTip();
