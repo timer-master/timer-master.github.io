@@ -9,8 +9,10 @@
    let count = 0;
    
    startBtn.addEventListener('click', function () {
-       timer = true;
+    if (count = 0){
+        timer = true;
        stopWatch();
+    }    
    });
    
    stopBtn.addEventListener('click', function () {
