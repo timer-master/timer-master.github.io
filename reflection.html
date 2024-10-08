@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?  family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
+    />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width", initial-scale="1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <title>Timer Master</title>
   </head>
 
@@ -18,7 +22,7 @@
     <header>
       <div class="navbar">
         <a class="logoImg" href="./index.html">
-          <img class="logo" src="./logo.png" height="38px" width="125px">
+          <img class="logo" src="./logo.png" height="38px" width="125px" />
         </a>
         <div class="dropdown">
           <button class="dropbtn">
@@ -56,20 +60,55 @@
 
     <!--   title -->
     <h1 class="title">Reflect on Your Day</h1>
-<br><br>
-    <input type="radio" id="good" name="feelings" value="good">
-  <label for="good">Thumbs Up</label><br>
-  <input type="radio" id="mid" name="feelings" value="mid">
-  <label for="mid">Thumbs Middle</label><br>  
-  <input type="radio" id="bad" name="feelings" value="bad">
-  <label for="bad">Thubms Down</label><br><be>
 
-    <textarea placeholder="How Was your Day?"></textarea>
+    <p>
+      Reflecting is a powerful tool to ensure that you plan your day to the fullest. With just a quick reflection, you can determine if you managed your day well, and work to improve your time managment for tomorrow. Reflect on how you managed your time today by answering these quick
+      questions below:
+    </p>
+
+    <button id="submitInputBox" onclick="show('prompt1')">Start</button>
+    <div id="prompt1" style="display: none">
+      <p><b>1. How did you manage your time today?</b></p>
+      <button class="sentiment" onclick="show('textareaA'); show('prompt');">
+        <span class="material-symbols-outlined">sentiment_very_dissatisfied</span>
+      </button>
+      <button class="sentiment" onclick="show('textareaA'); show('prompt');">
+        <span class="material-symbols-outlined">sentiment_dissatisfied</span>
+      </button>
+      <button class="sentiment" onclick="show('textareaB'); show('prompt');">
+        <span class="material-symbols-outlined">sentiment_neutral</span>
+      </button>
+      <button class="sentiment" onclick="show('textareaC'); show('prompt');">
+        <span class="material-symbols-outlined">sentiment_satisfied</span>
+      </button>
+      <button class="sentiment" onclick="show('textareaC'); show('prompt');">
+        <span class="material-symbols-outlined">sentiment_very_satisfied</span>
+      </button>
+    </div>
+  
+    <br />
+
+    <p id="textareaC" style="display: none"><b>2. How did you plan your day well today?</b></p>
+    <p id="textareaB" style="display: none"><b>2. How did your day go today?</b></p>
+    <p id="textareaA" style="display: none"><b>2. How did your day go wrong today?</b></p>
+    <div id="prompt" style="display: none">
+      <textarea placeholder="Type here:" rows="5" cols="40" ></textarea>
+      <br>
+      <button id="submitInputBox" onclick="show('prompt2')">Next ></button>
+    </div>
+    <div id="prompt2" style="display: none">
+      <p><b>3. Plan ahead: How will you manage your time tomorrow?</b></p>
+      <textarea placeholder="Type here:" rows="5" cols="40" ></textarea>
+      <br>
+      <button id="submitInputBox" onclick="submit()">Submit</button>
+    </div>
+
+
     <footer class="footer">
-      <small
-        >Copyright 2024 by the developers of Timer Master. All rights reserved.
-        Not to be copied without permission.</small
-      >
+      <small>
+        Copyright 2024 by the developers of Timer Master. All rights reserved.
+        Not to be copied without permission.
+      </small>
     </footer>
 
     <!--   javascript -->
