@@ -56,7 +56,7 @@ function startTimer() {
     timerInterval = setInterval(() => {
     timeLeft = TIME_LIMIT - timePassed;
     // Only increment timePassed if not paused
-    if (!isPaused && timeLeft != 0) {
+    if (!isPaused && timePassed == 0) {
       timePassed += 1;
     }
     document.getElementById("base-timer-label").innerHTML =
