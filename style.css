@@ -97,6 +97,7 @@ html {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 88888;
 }
 
 
@@ -119,7 +120,7 @@ html {
 .navbar a:hover{
   background-color:  #93ccea;
   color: black;
-  padding-bottom: 5px;
+  padding-bottom: 22px;
 }
 
 .dropdown {
@@ -145,7 +146,6 @@ html {
   padding-bottom: 22px;
   color: black;
 }
-
 
 /* FAQ Dropdown */
 .dropdown-content {
