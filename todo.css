@@ -89,33 +89,76 @@ body {
     clear: both;
   }
   
-  input[type="text"], input[type="datetime-local"] {
+
+  /* Input Area */
+  input[type="text"]{
     margin: 0;
-    border: 2px solid #005F99; /* Border with Timer Master primary blue */
+    border: 2px solid #005F99; 
     border-radius: 5px;
-    width: 65%; /* Adjusted to fit with two inputs */
+    width: 10%; 
     padding: 12px;
     float: left;
     font-size: 18px;
     margin-right: 10px;
-    background-color: #f9f9f9; /* Light background */
-    color: #26303e; /* Dark text for readability */
+    background-color: #f9f9f9; 
+    color: #26303e; 
+    margin-left: 5px;
   }
   
+  input[type="datetime-local"]{
+    margin: 0;
+    border: 2px solid #005F99; 
+    border-radius: 5px;
+    width: 25%; 
+    padding: 11px;
+    float: left;
+    font-size: 18px;
+    margin-right: 10px;
+    background-color: #f9f9f9; 
+    color: #26303e; 
+  } 
+
+  .input-group {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px; 
+  }
+  
+  label {
+    color: #1C2833;
+    font-size: 18px;
+    white-space: nowrap; 
+    margin-left: 20px;
+    font-weight: bold;
+  }
+
+  .input-group label {
+    margin-right: 10px; 
+    font-size: 18px;
+  }
+  
+  input[type="text"] {
+    width: 70%; 
+  }
+
   .addBtn {
-    padding: 12px;
-    width: 25%;
-    background-color: #005F99; /* Timer Master primary blue */
+    padding: 14px;
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 7%;
+    background-color: #005F99; 
     color: white;
     text-align: center;
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
     border-radius: 5px;
+    border: none;
+    margin-left: 20px;
   }
   
   .addBtn:hover {
-    background-color: #87CEEB; /* Light blue on hover */
+    background-color: #87CEEB; 
     color: black;
   }
   
@@ -129,7 +172,8 @@ body {
 
 
 
-  /* General Formatting */
+
+/* General Formatting */
 body,
 html {
   font-family: "Roboto", Arial, sans-serif;
