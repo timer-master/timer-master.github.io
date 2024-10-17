@@ -76,7 +76,7 @@ body {
   
   /* Style the header */
   .header {
-    background-color: #00BFFF;
+    background-color: #04a9e0;
     padding: 30px 40px;
     color: white;
     text-align: center;
@@ -89,6 +89,24 @@ body {
     clear: both;
   }
   
+/* Style the alarm icon */
+.alarm-icon {
+  float: right; 
+  margin-right: 40px; 
+  cursor: pointer;
+  position: relative; 
+  top: -5px;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  padding: 5px; 
+  border-radius: 5px; 
+}
+
+/* Hover effect */
+.alarm-icon:hover {
+  background-color: #005F99; 
+  color: white; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
 
   /* Input Area */
   input[type="text"]{
