@@ -108,6 +108,12 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
+.alarm-icon.active {
+  background-color: #005F99; 
+  color: white; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
   /* Input Area */
   input[type="text"]{
     margin: 0;
