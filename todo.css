@@ -114,6 +114,31 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
+/* Style the timer icon */
+.timer-icon {
+  float: right; 
+  margin-right: 40px; 
+  cursor: pointer;
+  position: relative; 
+  top: -5px;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  padding: 5px; 
+  border-radius: 5px; 
+}
+
+/* Hover effect */
+.timer-icon:hover {
+  background-color: #005F99; 
+  color: white; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.timer-icon.active {
+  background-color: #005F99; 
+  color: white; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
   /* Input Area */
   input[type="text"]{
     margin: 0;
