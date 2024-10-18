@@ -56,29 +56,41 @@
     <br />
 
     <!--   title -->
-    <h1 class="title">To Do</h1>
-    <p>Plan your entire day by simply add your task and set the time, and we'll remind you with timers and alarms!</p>
-    <div id="myDIV" class="header">
-        <h2 style="margin:5px">My To Do List</h2> <br>
-        <div class="input-group">
-          <label for="myInput">Task Name:</label>
-          <input type="text" id="myInput" placeholder="Name your task">
-          <label for="myInput">Task Deadline:</label>
-          <input type="datetime-local" id="taskTime" placeholder="Set deadline">  
-          <button onclick="newElement()" class="addBtn">Add</button>
-        </div>
-      </div>
-      
-      <ul id="myUL">
-        <audio id="alarmAudio">
-          <source src="alarm.mp3" type="audio/mpeg">
-        </audio>
-      </ul>
-    <footer class="footer">
-      <small
-        >Copyright 2024 by the developers of Timer Master. All rights reserved.
-        Not to be copied without permission.</small
-      >
+      <h1 class="title">Timer</h1>
+    <div id="countdownTimer"></div>
+     <audio id="alarmAudio">
+      <source src="alarm.mp3" type="audio/mpeg">
+    </audio>
+      <input
+        placeholder="Hours"
+        type="number"
+        id="inputBoxHours"
+        name="hours"
+        max="23"
+        maxlength="2"
+      />
+      <input
+        placeholder="Minutes"
+        type="number"
+        id="inputBoxMinutes"
+        name="minutes"
+        max="59"
+        maxlength="2"
+      />
+      <input
+        placeholder="Seconds"
+        type="number"
+        id="inputBoxSeconds"
+        name="seconds"
+        max="59"
+        maxlength="2"
+      />
+      <br>
+      <button id="submitInputBox">
+        Start
+      </button>
+      <button id="pauseTimer">Pause</button>
+      <button id="resetTimer">Reset</button>
 
     </footer>
 
