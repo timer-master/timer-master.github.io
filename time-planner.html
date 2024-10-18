@@ -59,12 +59,14 @@
     <h1 class="title">Time Planner</h1>
     <p>Plan your entire day by simply add your task and set the time, and we'll remind you with timers!</p>
     <div id="myDIV" class="header">
-        <h2 style="margin:5px">My To Do List</h2> <br>
+        <h2 style="margin:5px">Today's List</h2> <br>
         <div class="input-group">
           <label for="myInput">Task Name:</label>
           <input type="text" id="myInput" placeholder="Name your task">
-          <label for="myInput">Task Deadline:</label>
-          <input type="datetime-local" id="taskTime" placeholder="Set deadline">  
+          <label for="myInput">Start Time:</label>
+          <input type="datetime-local" id="taskStart">  
+          <label for="myInput">End Time:</label>
+          <input type="datetime-local" id="taskEnd">  
           <button onclick="newElement()" class="addBtn">Add</button>
         </div>
       </div>
