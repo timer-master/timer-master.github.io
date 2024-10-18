@@ -184,6 +184,7 @@ html {
   color: black;
   padding-top: 25px;
   text-align: center;
+  display: none;
 }
 
 /* About Page Styling */

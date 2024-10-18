@@ -8,10 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=alarm" />
     <meta name="viewport" content="width=device-width", initial-scale="1" />
-    <link rel="stylesheet" href="./timer.css" />
+    <link rel="stylesheet" href="./todo.css" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <title>Countdown</title>
+    <title>To Do</title>
   </head>
 
   <body>
@@ -55,30 +56,34 @@
     <br />
 
     <!--   title -->
-    <h1 class="title">Countdown</h1>
-    <h3>Set Your Countdown Timer</h3>
-    <audio id="alarmAudio">
-        <source src="alarm.mp3" type="audio/mpeg">
-      </audio>
-    <input type="datetime-local" id="dateInput">
-    <br> <br>
-    <div id="countdown"></div>
-      <br>
-      <button onclick="startCountdown()" id="submitInputBox" type="button">
-        Start
-      </button>
-      <button onclick="resetCountdown()" id="resetTimer">Reset</button>
+    <h1 class="title">Time Planner</h1>
+    <p>Plan your entire day by simply add your task and set the time, and we'll remind you with timers!</p>
+    <div id="myDIV" class="header">
+        <h2 style="margin:5px">My To Do List</h2> <br>
+        <div class="input-group">
+          <label for="myInput">Task Name:</label>
+          <input type="text" id="myInput" placeholder="Name your task">
+          <label for="myInput">Task Deadline:</label>
+          <input type="datetime-local" id="taskTime" placeholder="Set deadline">  
+          <button onclick="newElement()" class="addBtn">Add</button>
+        </div>
+      </div>
+      
+      <ul id="myUL">
+        <audio id="alarmAudio">
+          <source src="alarm.mp3" type="audio/mpeg">
+        </audio>
+      </ul>
 
-    <br />
-    <br />
     <footer class="footer">
       <small
         >Copyright 2024 by the developers of Timer Master. All rights reserved.
         Not to be copied without permission.</small
       >
+
     </footer>
 
     <!--   javascript -->
-    <script src="countdown.js"></script>
+    <script src="todo.js"></script>
   </body>
 </html>
