@@ -85,17 +85,10 @@
        }
    }
     lapBtn.addEventListener('click', function (){
-        let laphr = hrString;
-        let lapmin = minString;
-        let lapsecond = secString;
-        let lapcount = countString;
-
-        if (lapcount != 0){
-            laphr = laphourString;
-            lapmin = lapminString;
-            lapsecond = lapsecondString;
-            lapcount = lapcountString;
-        }
+         laphr = hour;
+         lapmin = minute;
+         lapsecond = second;
+         lapcount = count;
 
             document.getElementById('hr').innerHTML = hrString;
             document.getElementById('min').innerHTML = minString;
