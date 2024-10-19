@@ -61,40 +61,38 @@
 
     <!--   title -->
     <h1 class="title">Screen Time</h1>
+    <label><b>Screen Time:</b></label>
+    <input
+      placeholder="Minutes"
+      type="number"
+      id="inputScreenTime"
+      name="minutes"
+      max="59"
+      maxlength="2"
+    />
+    <label class="margin"><b>Break Time:</b></label>
+    <input
+      placeholder="Minutes"
+      type="number"
+      id="inputBreakTime"
+      name="minutes"
+      max="59"
+      maxlength="2"
+    />
+    <br>
+    <button id="submitTime" onclick="submitBreakTime()">Start</button>
+    <button id="resetTime">Reset</button>
+
     <div class="flex-container">
-      <!--  Screen Time -->
+      <!--  Screen Time Dipslay -->
       <div>
         <b>Screen Time</b>
-        <br />
-        <input
-          placeholder="Minutes"
-          type="number"
-          id="inputScreenTime"
-          name="minutes"
-          max="59"
-          maxlength="2"
-        />
-        <br />
-        <button id="submitTime" onclick="submitScreenTime()">Start</button>
-        <button id="resetTime">Reset</button>
         <div id="screenTimeTimer"></div>
       </div>
 
-      <!--  Break Time -->
+      <!--  Break Time Display -->
       <div>
         <b>Break Time</b>
-        <br />
-        <input
-          placeholder="Minutes"
-          type="number"
-          id="inputBreakTime"
-          name="minutes"
-          max="59"
-          maxlength="2"
-        />
-        <br />
-        <button id="submitTime" onclick="submitBreakTime()">Start</button>
-        <button id="resetTime">Reset</button>
         <div id="breakTimeTimer"></div>
       </div>
     </div>

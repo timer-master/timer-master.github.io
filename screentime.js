@@ -76,34 +76,34 @@ document.getElementById("breakTimeTimer").innerHTML = `
 
 // Timer Functions
 function startTimer() {
-    timerInterval = setInterval(() => {
+  timerInterval = setInterval(() => {
     timeLeft = TIME_LIMIT - timePassed;
     timePassed += 1;
     document.getElementById("base-timer-label").innerHTML =
       formatTime(timeLeft);
-     setCircleDasharray();
+    setCircleDasharray();
     if (timeLeft <= ALERT_THRESHOLD) {
       setRemainingPathColor(timeLeft); // Call setRemainingPathColor only when necessary
       if (timeLeft === 0) {
         onTimesUp();
       }
-     } else if (timeLeft <= WARNING_THRESHOLD) {
+    } else if (timeLeft <= WARNING_THRESHOLD) {
       setRemainingPathColor(timeLeft);
-     }
+    }
   }, 1000);
-  
-  
-    // Add event listener for "Reset" button after the timer is started
-    document.getElementById("resetTime").addEventListener("click", function () {
-      window.location.reload();
-    });
-  }
-var audio = document.getElementById("alarmAudio"); 
 
+  // Add event listener for "Reset" button after the timer is started
+  document.getElementById("resetTime").addEventListener("click", function () {
+    window.location.reload();
+  });
+}
+
+var audio = document.getElementById("alarmAudio");
 function onTimesUp() {
   audio.play();
   clearInterval(timerInterval);
 }
+
 function formatTime(time) {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
@@ -142,9 +142,11 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
-// Error Alerts  
+// Error Alerts
 function screenTooLong() {
-  alert("ERROR. It is not advise to have a screen time more than 60 minutes at a time.");
+  alert(
+    "ERROR. It is not advise to have a screen time more than 60 minutes at a time."
+  );
 }
 function minutesTooShort() {
   alert("ERROR. Please do not input a negative number.");
@@ -153,58 +155,22 @@ function breakTooLong() {
   alert("ERROR. Please input a number from 0 to 59.");
 }
 
-
-// Screen Time
-function submitScreenTime() {
-  // Get values from input
-  if (document.getElementById("inputScreenTime").value > 59) {
-    screenTooLong();
-  }
-  else if (document.getElementById("inputScreenTime").value < 0) {
-    minutesTooShort();
-  }
-  else if (document.getElementById("inputBreakTime").value < 0) {
-    minutesTooShort();
-  }
-  else if (document.getElementById("inputBreakTime").value > 59) {
-    breakTooLong();
-  }
-
-  else {
-    var screenMinutes = parseInt(document.getElementById("inputScreenTime").value) || 0;
-    // Calculate total seconds
-    var totalSeconds = screenMinutes * 60;
-    document.getElementById("base-timer-label").innerHTML =
-      formatTime(totalSeconds);
-    console.log("Total seconds:", totalSeconds);
-    // Update TIME_LIMIT
-    TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
-    timeLeft = TIME_LIMIT; // Update timeLeft
-    startTimer(); // Start timer
-  // }
-}
-
-
 // BREAK TIME
-function submitBreaktTime() {
+function submitTime(timeSetTo) {
   // Get values from input
   if (document.getElementById("inputScreenTime").value > 59) {
     screenTooLong();
-  }
-  else if (document.getElementById("inputScreenTime").value < 0) {
+  } else if (document.getElementById("inputScreenTime").value < 0) {
     minutesTooShort();
-  }
-  else if (document.getElementById("inputBreakTime").value < 0) {
+  } else if (document.getElementById("inputBreakTime").value < 0) {
     minutesTooShort();
-  }
-  else if (document.getElementById("inputBreakTime").value > 59) {
+  } else if (document.getElementById("inputBreakTime").value > 59) {
     breakTooLong();
-  }
-
-  else {
-    var breakMinutes = parseInt(document.getElementById("inputBreakTime").value) || 0;
+  } else {
+    var timeSetTo =
+      parseInt(document.getElementById("inputBreakTime").value) || 0;
     // Calculate total seconds
-    var totalSeconds = breakMinutes * 60;
+    var totalSeconds = timeSetTo * 60;
     document.getElementById("base-timer-label").innerHTML =
       formatTime(totalSeconds);
     console.log("Total seconds:", totalSeconds);
@@ -212,9 +178,8 @@ function submitBreaktTime() {
     TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
     timeLeft = TIME_LIMIT; // Update timeLeft
     startTimer(); // Start timer
- }
+  }
 }
-
 
 // Reset Timer
 document.getElementById("resetTime").addEventListener("click", function () {
@@ -223,15 +188,15 @@ document.getElementById("resetTime").addEventListener("click", function () {
 // // Form Event Listener
 // document.getElementById("submitTime").addEventListener("click", function () {
 //   if(timeLeft==0){
-//     submitTime(); 
+//     submitTime();
 //   }
 //   else{
 //     startTimer();
 //   }
-  
+
 // });
 // Update Timer Display
 function updateTimerDisplay() {
   // Add the updateTimerDisplay function
   document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
-}}
+}
