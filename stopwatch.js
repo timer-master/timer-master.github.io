@@ -89,11 +89,11 @@
          lapmin = minute;
          lapsecond = second;
          lapcount = count;
-
-            document.getElementById('hr').innerHTML = hrString;
-            document.getElementById('min').innerHTML = minString;
-            document.getElementById('sec').innerHTML = secString;
-            document.getElementById('count').innerHTML = countString;
+         let laphrString = hour;
+         let lapminString = minute;
+         let lapsecString = second;
+         let lapcountString = count;
+         
             document.getElementById('laphr').innerHTML = laphrString;
             document.getElementById('lapmin').innerHTML = lapminString;
             document.getElementById('lapsec').innerHTML = lapsecString;
