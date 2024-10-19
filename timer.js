@@ -202,7 +202,9 @@ document.getElementById("submitInputBox").addEventListener("click", function () 
     submitTime(); // Call submitTime directly without preventing default
   }
   else{
-    startTimer();
+   if(isgoing=false){
+      startTimer(); // Start timer
+    }
   }
   
 });
