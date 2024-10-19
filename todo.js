@@ -63,7 +63,7 @@ function newElement() {
 
 // Countdown function, modified to accept deadlineValue and task description
 function countdown(deadlineValue, inputValue) {
-  alert("You will receive an alarm reminder at your task deadline.");
+  alert("Alarm set. You will receive an alarm reminder at your task deadline.");
   let interval;
   let alertShown = false; 
 
