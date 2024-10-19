@@ -226,7 +226,98 @@ body {
   }
 
 
+/* Countdown Timer Interface */
+#countdownTimer {
+  margin-top: 20px;
+  display: grid; 
+  display: none;
+  place-items: center;
+}
 
+.base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.Start {
+/*   font-size: 25px;
+  border: none;
+  width: 5%;
+  background-color: #41B883; */
+  font-size: 20px;
+  border: 2px #00BFFF;
+  width: 7%;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: #41B883;
+}
+
+.Stop {
+/*   font-size: 25px;
+  background-color: red;
+  width: 5%;
+  border: none; */
+  font-size: 20px;
+  border: 2px #00BFFF;
+  width: 7%;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background-color: red;
+}
 
 /* General Formatting */
 body,
