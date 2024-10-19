@@ -174,7 +174,7 @@ function submitTime() {
     console.log("Total seconds:", totalSeconds);
     // Update TIME_LIMIT
     TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
-    setRemainingPathColor(TIME_LIIMIT);
+    setRemainingPathColor(TIME_LIMIT);
     timeLeft = TIME_LIMIT; // Update timeLeft
     if(isgoing==false){
       startTimer(); // Start timer
