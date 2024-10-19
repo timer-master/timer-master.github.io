@@ -10,7 +10,7 @@ function createCloseButton(listItem) {
     span.onclick = function () {
         var div = this.parentElement;
         div.style.display = "none";
-        document.getElementById("countdownTimer").innerHTML=''
+        document.getElementById("countdownTimer").style.display="none";
     };
 }
 
@@ -59,6 +59,7 @@ let TIME_LIMIT = 0;
 
 // HTML Setup for Timer
 function setupTimer() {
+    document.getElementById("countdownTimer").style.display="block";
     document.getElementById("countdownTimer").innerHTML = `
     <div class="base-timer">
       <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
