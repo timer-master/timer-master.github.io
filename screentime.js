@@ -25,9 +25,32 @@ let timeLeft = 0;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.normal.color;
 let TIME_LIMIT = 1200; // Initialize TIME_LIMIT
-let isPaused = false;
 // HTML Setup
-document.getElementById("countdownTimer").innerHTML = `
+document.getElementById("screenTimeTimer").innerHTML = `
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining ${remainingPathColor}"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+    timeLeft
+  )}</span>
+</div>
+`;
+
+document.getElementById("breakTimeTimer").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
@@ -55,10 +78,7 @@ document.getElementById("countdownTimer").innerHTML = `
 function startTimer() {
     timerInterval = setInterval(() => {
     timeLeft = TIME_LIMIT - timePassed;
-    // Only increment timePassed if not paused
-    if (!isPaused) {
-      timePassed += 1;
-    }
+    timePassed += 1;
     document.getElementById("base-timer-label").innerHTML =
       formatTime(timeLeft);
      setCircleDasharray();
@@ -72,19 +92,10 @@ function startTimer() {
      }
   }, 1000);
   
-    // Add event listener for "Pause" button after the timer is started
-    document.getElementById("pauseTimer").addEventListener("click", function () {
-      clearInterval(timerInterval); // Pause the timer
-      isPaused = true; // Set pause state flag
-    });
   
     // Add event listener for "Reset" button after the timer is started
-    document.getElementById("resetTimer").addEventListener("click", function () {
+    document.getElementById("resetTime").addEventListener("click", function () {
       window.location.reload();
-      // clearInterval(timerInterval);
-      // timeLeft = TIME_LIMIT;
-      // isPaused = false; // Reset pause state
-      // updateTimerDisplay(); // Update the display with the initial timeLeft
     });
   }
 var audio = document.getElementById("alarmAudio"); 
@@ -132,69 +143,54 @@ function setCircleDasharray() {
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 // Error Alerts  
-function hoursTooLong() {
-  alert("ERROR. The maximum hours is 23. To set a timer for a multiple days, use our Countdown feature.");
+function screenTooLong() {
+  alert("ERROR. It is not advise to have a screen time more than 60 minutes at a time.");
 }
-function hoursTooShort() {
+function minutesTooShort() {
   alert("ERROR. Please do not input a negative number.");
 }
-function minutesTooLong() {
-  alert("ERROR. Please input a number from 0 to 59.");
-}
-function secondsTooLong() {
+function breakTooLong() {
   alert("ERROR. Please input a number from 0 to 59.");
 }
 
 // Submit Time and Initialize Timer
 function submitTime() {
-  // // Get values from input
-  // if (document.getElementById("inputBoxHours").value > 23) {
-  //   hoursTooLong();
-  // }
-  // else if (document.getElementById("inputBoxHours").value < 0) {
-  //   hoursTooShort();
-  // }
-  // else if (document.getElementById("inputBoxMinutes").value > 59 || document.getElementById("inputBoxMinutes").value < 0) {
-  //   minutesTooLong();
-  // }
-  // else if (document.getElementById("inputBoxSeconds").value > 59 || document.getElementById("inputBoxSeconds").value < 0) {
-  //   secondsTooLong();
-  // }
+  // Get values from input
+  if (document.getElementById("inputScreenTime").value > 59) {
+    screenTooLong();
+  }
+  else if (document.getElementById("inputScreenTime").value < 0) {
+    minutesTooShort();
+  }
+  else if (document.getElementById("inputBreakTime").value < 0) {
+    minutesTooShort();
+  }
+  else if (document.getElementById("inputBreakTime").value > 59) {
+    breakTooLong();
+  }
 
-  // else {
-  //   var hours = parseInt(document.getElementById("inputBoxHours").value) || 0;
-    // var minutes = parseInt(document.getElementById("inputBoxMinutes").value) || 0;
-    // var seconds = parseInt(document.getElementById("inputBoxSeconds").value) || 0;
+  else {
+    var screenMinutes = parseInt(document.getElementById("inputScreenTime").value) || 0;
+    var breakMinutes = parseInt(document.getElementById("inputBreakTime").value) || 0;
     // Calculate total seconds
-    var totalSeconds = 1200;
+    var totalSeconds = screenMinutes * 60;
     document.getElementById("base-timer-label").innerHTML =
       formatTime(totalSeconds);
     console.log("Total seconds:", totalSeconds);
     // Update TIME_LIMIT
-    // TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
-    
-    // timeLeft = TIME_LIMIT; // Update timeLeft
+    TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
+    timeLeft = TIME_LIMIT; // Update timeLeft
     startTimer(); // Start timer
   // }
 }
-// Pause Timer
-document.getElementById("pauseTimer").addEventListener("click", function () {
-  clearInterval(timerInterval);
-  isPaused = true; // Set pause state flag
-});
 // Reset Timer
-document.getElementById("resetTimer").addEventListener("click", function () {
+document.getElementById("resetTime").addEventListener("click", function () {
   window.location.reload();
-  // clearInterval(timerInterval);
-  // timeLeft = TIME_LIMIT;
-  // isPaused = false;
-  // updateTimerDisplay(); // Update the display with the initial timeLeft
 });
 // Form Event Listener
-document.getElementById("submitInputBox").addEventListener("click", function () {
-  isPaused=false;
+document.getElementById("submitTime").addEventListener("click", function () {
   if(timeLeft==0){
-    submitTime(); // Call submitTime directly without preventing default
+    submitTime(); 
   }
   else{
     startTimer();
@@ -205,4 +201,4 @@ document.getElementById("submitInputBox").addEventListener("click", function () 
 function updateTimerDisplay() {
   // Add the updateTimerDisplay function
   document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
-}
+}}
