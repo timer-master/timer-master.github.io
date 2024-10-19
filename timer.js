@@ -176,7 +176,7 @@ function submitTime() {
     TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
     
     timeLeft = TIME_LIMIT; // Update timeLeft
-    if(isgoing=false){
+    if(isgoing==false){
       startTimer(); // Start timer
     }
   }
@@ -202,7 +202,7 @@ document.getElementById("submitInputBox").addEventListener("click", function () 
     submitTime(); // Call submitTime directly without preventing default
   }
   else{
-   if(isgoing=false){
+   if(isgoing==false){
       startTimer(); // Start timer
     }
   }
