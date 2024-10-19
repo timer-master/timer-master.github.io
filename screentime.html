@@ -63,6 +63,40 @@
     <h1 class="title">Screen Time</h1>
   <p>20-minute Screen Time Manager</p>
   
+ <div id="countdownTimer"></div>
+     <audio id="alarmAudio">
+      <source src="alarm.mp3" type="audio/mpeg">
+    </audio>
+      <input
+        placeholder="Hours"
+        type="number"
+        id="inputBoxHours"
+        name="hours"
+        max="23"
+        maxlength="2"
+      />
+      <input
+        placeholder="Minutes"
+        type="number"
+        id="inputBoxMinutes"
+        name="minutes"
+        max="59"
+        maxlength="2"
+      />
+      <input
+        placeholder="Seconds"
+        type="number"
+        id="inputBoxSeconds"
+        name="seconds"
+        max="59"
+        maxlength="2"
+      />
+      <br>
+      <button id="submitInputBox">
+        Start
+      </button>
+      <button id="pauseTimer">Pause</button>
+      <button id="resetTimer">Reset</button>
 
     <footer class="footer">
       <small>
