@@ -1,5 +1,8 @@
 .title {
-  font-family: "Montserrat", Arial, sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #333;
 }
 /* Countdown Timer Interface */
 #countdownTimer {

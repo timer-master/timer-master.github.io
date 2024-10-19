@@ -149,6 +149,12 @@ function newElement() {
     var taskStart = document.getElementById("taskStart").value; // Date and Time
     var taskEnd = document.getElementById("taskEnd").value; // Date and Time
 
+    // Clear input fields
+    document.getElementById("myInput").value = "";
+    document.getElementById("taskStart").value = "";
+    document.getElementById("taskEnd").value = "";
+
+    
     // Close button
     createCloseButton(li);
 
