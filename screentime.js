@@ -153,8 +153,9 @@ function breakTooLong() {
   alert("ERROR. Please input a number from 0 to 59.");
 }
 
-// Submit Time and Initialize Timer
-function submitTime() {
+
+// Screen Time
+function submitScreenTime() {
   // Get values from input
   if (document.getElementById("inputScreenTime").value > 59) {
     screenTooLong();
@@ -171,7 +172,6 @@ function submitTime() {
 
   else {
     var screenMinutes = parseInt(document.getElementById("inputScreenTime").value) || 0;
-    var breakMinutes = parseInt(document.getElementById("inputBreakTime").value) || 0;
     // Calculate total seconds
     var totalSeconds = screenMinutes * 60;
     document.getElementById("base-timer-label").innerHTML =
@@ -183,20 +183,53 @@ function submitTime() {
     startTimer(); // Start timer
   // }
 }
+
+
+// BREAK TIME
+function submitBreaktTime() {
+  // Get values from input
+  if (document.getElementById("inputScreenTime").value > 59) {
+    screenTooLong();
+  }
+  else if (document.getElementById("inputScreenTime").value < 0) {
+    minutesTooShort();
+  }
+  else if (document.getElementById("inputBreakTime").value < 0) {
+    minutesTooShort();
+  }
+  else if (document.getElementById("inputBreakTime").value > 59) {
+    breakTooLong();
+  }
+
+  else {
+    var breakMinutes = parseInt(document.getElementById("inputBreakTime").value) || 0;
+    // Calculate total seconds
+    var totalSeconds = breakMinutes * 60;
+    document.getElementById("base-timer-label").innerHTML =
+      formatTime(totalSeconds);
+    console.log("Total seconds:", totalSeconds);
+    // Update TIME_LIMIT
+    TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
+    timeLeft = TIME_LIMIT; // Update timeLeft
+    startTimer(); // Start timer
+ }
+}
+
+
 // Reset Timer
 document.getElementById("resetTime").addEventListener("click", function () {
   window.location.reload();
 });
-// Form Event Listener
-document.getElementById("submitTime").addEventListener("click", function () {
-  if(timeLeft==0){
-    submitTime(); 
-  }
-  else{
-    startTimer();
-  }
+// // Form Event Listener
+// document.getElementById("submitTime").addEventListener("click", function () {
+//   if(timeLeft==0){
+//     submitTime(); 
+//   }
+//   else{
+//     startTimer();
+//   }
   
-});
+// });
 // Update Timer Display
 function updateTimerDisplay() {
   // Add the updateTimerDisplay function
