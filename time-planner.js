@@ -10,6 +10,7 @@ function createCloseButton(listItem) {
     span.onclick = function () {
         var div = this.parentElement;
         div.style.display = "none";
+        document.getElementById("countdownTimer").innerHTML
     };
 }
 
