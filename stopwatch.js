@@ -84,14 +84,14 @@
            setTimeout(stopWatch, 10);
        }
    }
-lapBtn.addEventListener('click', function (){
-    let hrString = laphour;
-    let minString = lapminute;
-    let secString = lapsecond;
-    let countString = lapcount;
+    lapBtn.addEventListener('click', function (){
+        let hrString = laphour;
+        let minString = lapminute;
+        let secString = lapsecond;
+        let countString = lapcount;
 
-    document.getElementById('hr').innerHTML = hrString;
-           document.getElementById('min').innerHTML = minString;
-           document.getElementById('sec').innerHTML = secString;
-           document.getElementById('count').innerHTML = countString;
-});
+        document.getElementById('hr').innerHTML = hrString;
+            document.getElementById('min').innerHTML = minString;
+            document.getElementById('sec').innerHTML = secString;
+            document.getElementById('count').innerHTML = countString;
+    });
