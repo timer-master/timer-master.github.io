@@ -2,12 +2,17 @@
    let startBtn = document.getElementById('start');
    let stopBtn = document.getElementById('stop');
    let resetBtn = document.getElementById('reset');
+   let lapBtn = document.getElementById('lap');
    
    let hour = 0;
    let minute = 0;
    let second = 0;
    let count = 0;
-   
+   let laphour = 0;
+   let lapminute = 0;
+   let lapsecond = 0;
+   let lapcount = 0;
+
    startBtn.addEventListener('click', function () {
     if (count == 0 && second == 0 || timer == false){
         timer = true;
@@ -79,3 +84,14 @@
            setTimeout(stopWatch, 10);
        }
    }
+lapBtn.addEventListener('click', function (){
+    let hrString = laphour;
+    let minString = lapminute;
+    let secString = lapsecond;
+    let countString = lapcount;
+
+    document.getElementById('hr').innerHTML = hrString;
+           document.getElementById('min').innerHTML = minString;
+           document.getElementById('sec').innerHTML = secString;
+           document.getElementById('count').innerHTML = countString;
+});
