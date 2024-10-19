@@ -1,11 +1,7 @@
-//COUNTDOWN TIMER
-
 // Timer Constants
 const FULL_DASH_ARRAY = 283;
-// Timer State Thresholds
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
-// Timer Color Codes
 const COLOR_CODES = {
   normal: {
     color: "green",
@@ -19,13 +15,18 @@ const COLOR_CODES = {
     threshold: ALERT_THRESHOLD,
   },
 };
+
 // Timer Variables
 let timePassed = 0;
-let timeLeft = 0;
+let screenTimeLeft = 0;
+let breakTimeLeft = 0;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.normal.color;
-let TIME_LIMIT = 1200; // Initialize TIME_LIMIT
-// HTML Setup
+let SCREEN_TIME_LIMIT = 1200; 
+let BREAK_TIME_LIMIT = 300; 
+let isBreakTime = false; // Track whether it's break time
+
+// HTML Setup for Screen Time Timer
 document.getElementById("screenTimeTimer").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -45,18 +46,19 @@ document.getElementById("screenTimeTimer").innerHTML = `
     </g>
   </svg>
   <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
+    screenTimeLeft
   )}</span>
 </div>
 `;
 
+// HTML Setup for Break Time Timer
 document.getElementById("breakTimeTimer").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
       <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
       <path
-        id="base-timer-path-remaining"
+        id="break-timer-path-remaining"
         stroke-dasharray="283"
         class="base-timer__path-remaining ${remainingPathColor}"
         d="
@@ -68,27 +70,90 @@ document.getElementById("breakTimeTimer").innerHTML = `
       ></path>
     </g>
   </svg>
-  <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
+  <span id="break-timer-label" class="base-timer__label">${formatTime(
+    breakTimeLeft
   )}</span>
 </div>
 `;
 
-// Timer Functions
+// Format time function
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+  return `${minutes}:${seconds}`;
+}
+
+// Set remaining path color based on thresholds
+function setRemainingPathColor(timeLeft, elementId) {
+  const { alert, warning, normal } = COLOR_CODES;
+  const element = document.getElementById(elementId);
+  if (timeLeft <= alert.threshold) {
+    element.classList.remove(warning.color);
+    element.classList.add(alert.color);
+  } else if (timeLeft <= warning.threshold) {
+    element.classList.remove(normal.color);
+    element.classList.add(warning.color);
+  }
+}
+
+// Calculate time fraction for circle dasharray
+function calculateTimeFraction(timeLeft, limit) {
+  const rawTimeFraction = timeLeft / limit;
+  return rawTimeFraction - (1 / limit) * (1 - rawTimeFraction);
+}
+
+// Set circle dasharray based on time remaining
+function setCircleDasharray(timeLeft, elementId) {
+  const circleDasharray = `${(calculateTimeFraction(timeLeft, isBreakTime ? BREAK_TIME_LIMIT : SCREEN_TIME_LIMIT) * FULL_DASH_ARRAY).toFixed(0)} 283`;
+  document.getElementById(elementId).setAttribute("stroke-dasharray", circleDasharray);
+}
+
+// Start Timer for Screen Time and Break Time
 function startTimer() {
+  if (timerInterval !== null) {
+    // If a timer is already running, do nothing to prevent double speed
+    return;
+  }
+
   timerInterval = setInterval(() => {
-    timeLeft = TIME_LIMIT - timePassed;
-    timePassed += 1;
-    document.getElementById("base-timer-label").innerHTML =
-      formatTime(timeLeft);
-    setCircleDasharray();
-    if (timeLeft <= ALERT_THRESHOLD) {
-      setRemainingPathColor(timeLeft); // Call setRemainingPathColor only when necessary
-      if (timeLeft === 0) {
-        onTimesUp();
+    if (!isBreakTime) {
+      // SCREEN TIME CODE
+      screenTimeLeft = SCREEN_TIME_LIMIT - timePassed;
+      timePassed += 1;
+      document.getElementById("base-timer-label").innerHTML = formatTime(screenTimeLeft);
+      setCircleDasharray(screenTimeLeft, "base-timer-path-remaining");
+
+      if (screenTimeLeft <= ALERT_THRESHOLD) {
+        setRemainingPathColor(screenTimeLeft, "base-timer-path-remaining");
+        if (screenTimeLeft === 0) {
+          clearInterval(timerInterval);
+          timerInterval = null; // Reset timerInterval
+          onScreenTimeUp();
+          startBreakTimeTimer(); // Switch to break time
+        }
+      } else if (screenTimeLeft <= WARNING_THRESHOLD) {
+        setRemainingPathColor(screenTimeLeft, "base-timer-path-remaining");
       }
-    } else if (timeLeft <= WARNING_THRESHOLD) {
-      setRemainingPathColor(timeLeft);
+    } else {
+      // BREAK TIME CODE
+      breakTimeLeft = BREAK_TIME_LIMIT - timePassed;
+      timePassed += 1;
+      document.getElementById("break-timer-label").innerHTML = formatTime(breakTimeLeft);
+      setCircleDasharray(breakTimeLeft, "break-timer-path-remaining");
+
+      if (breakTimeLeft <= ALERT_THRESHOLD) {
+        setRemainingPathColor(breakTimeLeft, "break-timer-path-remaining");
+        if (breakTimeLeft === 0) {
+          clearInterval(timerInterval);
+          timerInterval = null; // Reset timerInterval
+          onBreakTimeUp(); // End break time
+        }
+      } else if (breakTimeLeft <= WARNING_THRESHOLD) {
+        setRemainingPathColor(breakTimeLeft, "break-timer-path-remaining");
+      }
     }
   }, 1000);
 
@@ -98,105 +163,56 @@ function startTimer() {
   });
 }
 
-var audio = document.getElementById("alarmAudio");
-function onTimesUp() {
+// When break time starts
+function startBreakTimeTimer() {
+  isBreakTime = true;
+  timePassed = 0; // Reset time passed
+  startTimer(); // Start BREAK TIME
+}
+
+const audio = document.getElementById("alarmAudio");
+// When break time is over
+function onBreakTimeUp() {
   audio.play();
-  clearInterval(timerInterval);
+  alert("Break time is over! Time to resume screen time or rest.");
 }
 
-function formatTime(time) {
-  const minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
-  }
-  return `${minutes}:${seconds}`;
-}
-function setRemainingPathColor(timeLeft) {
-  const { alert, warning, normal } = COLOR_CODES;
-  if (timeLeft <= alert.threshold) {
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.remove(warning.color);
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.add(alert.color);
-  } else if (timeLeft <= warning.threshold) {
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.remove(normal.color);
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.add(warning.color);
-  }
-}
-function calculateTimeFraction() {
-  const rawTimeFraction = timeLeft / TIME_LIMIT;
-  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-}
-function setCircleDasharray() {
-  const circleDasharray = `${(
-    calculateTimeFraction() * FULL_DASH_ARRAY
-  ).toFixed(0)} 283`;
-  document
-    .getElementById("base-timer-path-remaining")
-    .setAttribute("stroke-dasharray", circleDasharray);
-}
-// Error Alerts
-function screenTooLong() {
-  alert(
-    "ERROR. It is not advise to have a screen time more than 60 minutes at a time."
-  );
-}
-function minutesTooShort() {
-  alert("ERROR. Please do not input a negative number.");
-}
-function breakTooLong() {
-  alert("ERROR. Please input a number from 0 to 59.");
+// When screen time is over
+function onScreenTimeUp() {
+  audio.play();
+  alert("Screen time is over! Help your eyes out by taking a break.");
 }
 
-// BREAK TIME
-function submitTime(timeSetTo) {
-  // Get values from input
-  if (document.getElementById("inputScreenTime").value > 59) {
+// Submit Time Function 
+function submitTime() {
+  const screenTimeInput = parseInt(document.getElementById("inputScreenTime").value) || 0;
+  const breakTimeInput = parseInt(document.getElementById("inputBreakTime").value) || 0;
+
+  function screenTooLong() {
+    alert("It is unhealthy to have a screen time of more than 60 minutes at a time. Consider having multiple rounds of screen time instead.");
+  }
+
+  function minutesTooShort() {
+    alert("Please enter a positive number for minutes.");
+  }
+
+  // Validation
+  if (screenTimeInput > 59) {
     screenTooLong();
-  } else if (document.getElementById("inputScreenTime").value < 0) {
+  } else if (screenTimeInput < 0 || breakTimeInput < 0) {
     minutesTooShort();
-  } else if (document.getElementById("inputBreakTime").value < 0) {
-    minutesTooShort();
-  } else if (document.getElementById("inputBreakTime").value > 59) {
-    breakTooLong();
   } else {
-    var timeSetTo =
-      parseInt(document.getElementById("inputBreakTime").value) || 0;
-    // Calculate total seconds
-    var totalSeconds = timeSetTo * 60;
-    document.getElementById("base-timer-label").innerHTML =
-      formatTime(totalSeconds);
-    console.log("Total seconds:", totalSeconds);
-    // Update TIME_LIMIT
-    TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
-    timeLeft = TIME_LIMIT; // Update timeLeft
-    startTimer(); // Start timer
+    // Convert times to seconds
+    SCREEN_TIME_LIMIT = screenTimeInput * 60;
+    BREAK_TIME_LIMIT = breakTimeInput * 60;
+    screenTimeLeft = SCREEN_TIME_LIMIT;
+    breakTimeLeft = BREAK_TIME_LIMIT;
+
+    // Update initial timer displays
+    document.getElementById("base-timer-label").innerHTML = formatTime(screenTimeLeft);
+    document.getElementById("break-timer-label").innerHTML = formatTime(breakTimeLeft);
+
+    // Start the timer
+    startTimer();
   }
-}
-
-// Reset Timer
-document.getElementById("resetTime").addEventListener("click", function () {
-  window.location.reload();
-});
-// // Form Event Listener
-// document.getElementById("submitTime").addEventListener("click", function () {
-//   if(timeLeft==0){
-//     submitTime();
-//   }
-//   else{
-//     startTimer();
-//   }
-
-// });
-// Update Timer Display
-function updateTimerDisplay() {
-  // Add the updateTimerDisplay function
-  document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
 }
