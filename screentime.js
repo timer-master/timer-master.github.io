@@ -147,35 +147,35 @@ function secondsTooLong() {
 
 // Submit Time and Initialize Timer
 function submitTime() {
-  // Get values from input
-  if (document.getElementById("inputBoxHours").value > 23) {
-    hoursTooLong();
-  }
-  else if (document.getElementById("inputBoxHours").value < 0) {
-    hoursTooShort();
-  }
-  else if (document.getElementById("inputBoxMinutes").value > 59 || document.getElementById("inputBoxMinutes").value < 0) {
-    minutesTooLong();
-  }
-  else if (document.getElementById("inputBoxSeconds").value > 59 || document.getElementById("inputBoxSeconds").value < 0) {
-    secondsTooLong();
-  }
+  // // Get values from input
+  // if (document.getElementById("inputBoxHours").value > 23) {
+  //   hoursTooLong();
+  // }
+  // else if (document.getElementById("inputBoxHours").value < 0) {
+  //   hoursTooShort();
+  // }
+  // else if (document.getElementById("inputBoxMinutes").value > 59 || document.getElementById("inputBoxMinutes").value < 0) {
+  //   minutesTooLong();
+  // }
+  // else if (document.getElementById("inputBoxSeconds").value > 59 || document.getElementById("inputBoxSeconds").value < 0) {
+  //   secondsTooLong();
+  // }
 
-  else {
-    var hours = parseInt(document.getElementById("inputBoxHours").value) || 0;
-    var minutes = parseInt(document.getElementById("inputBoxMinutes").value) || 0;
-    var seconds = parseInt(document.getElementById("inputBoxSeconds").value) || 0;
+  // else {
+  //   var hours = parseInt(document.getElementById("inputBoxHours").value) || 0;
+    // var minutes = parseInt(document.getElementById("inputBoxMinutes").value) || 0;
+    // var seconds = parseInt(document.getElementById("inputBoxSeconds").value) || 0;
     // Calculate total seconds
-    var totalSeconds = hours * 3600 + minutes * 60 + seconds;
+    var totalSeconds = 1200;
     document.getElementById("base-timer-label").innerHTML =
       formatTime(totalSeconds);
     console.log("Total seconds:", totalSeconds);
     // Update TIME_LIMIT
-    TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
+    // TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
     
-    timeLeft = TIME_LIMIT; // Update timeLeft
+    // timeLeft = TIME_LIMIT; // Update timeLeft
     startTimer(); // Start timer
-  }
+  // }
 }
 // Pause Timer
 document.getElementById("pauseTimer").addEventListener("click", function () {
