@@ -1,5 +1,5 @@
-
 //COUNTDOWN TIMER
+
 // Timer Constants
 const FULL_DASH_ARRAY = 283;
 // Timer State Thresholds

@@ -230,7 +230,6 @@ body {
 #countdownTimer {
   margin-top: 20px;
   display: grid; 
-  display: none;
   place-items: center;
 }
 
