@@ -1,6 +1,7 @@
 //COUNTDOWN TIMER
 
 // Timer Constants
+var isgoing = false;
 const FULL_DASH_ARRAY = 283;
 // Timer State Thresholds
 const WARNING_THRESHOLD = 10;
@@ -53,6 +54,7 @@ document.getElementById("countdownTimer").innerHTML = `
 
 // Timer Functions
 function startTimer() {
+    isgoing=true;
     timerInterval = setInterval(() => {
     timeLeft = TIME_LIMIT - timePassed;
     // Only increment timePassed if not paused
@@ -174,13 +176,16 @@ function submitTime() {
     TIME_LIMIT = totalSeconds; // Update TIME_LIMIT
     
     timeLeft = TIME_LIMIT; // Update timeLeft
-    startTimer(); // Start timer
+    if(isgoing=false){
+      startTimer(); // Start timer
+    }
   }
 }
 // Pause Timer
 document.getElementById("pauseTimer").addEventListener("click", function () {
   clearInterval(timerInterval);
   isPaused = true; // Set pause state flag
+  isgoing=false;
 });
 // Reset Timer
 document.getElementById("resetTimer").addEventListener("click", function () {
