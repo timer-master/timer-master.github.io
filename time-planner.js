@@ -5,13 +5,14 @@ function createCloseButton(listItem) {
     span.className = "close";
     span.appendChild(txt);
     listItem.appendChild(span);
-
+  
     // Click on a close button to hide the current list item
-    span.onclick = function () {
+    span.onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
     };
-}
+  }
+
 
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector("ul");
@@ -42,6 +43,9 @@ function newElement() {
     var inputValue = document.getElementById("myInput").value;
     var taskStart = document.getElementById("taskStart").value; // Date and Time
     var taskEnd = document.getElementById("taskEnd").value;     // Date and Time
+
+    // Close button
+    createCloseButton(li);
 
     // Validate input fields
     if (inputValue === "") {
@@ -279,13 +283,9 @@ function newElement() {
             // Add the updateTimerDisplay function
             document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
             }
+
+            // Clear input fields
+            document.getElementById("myInput").value = "";
+            document.getElementById("taskStart").value = "";
+            document.getElementById("taskEnd").value = "";
     }
-
-    // Create close button for the new list item
-    createCloseButton(li);
-
-    // Clear input fields
-    document.getElementById("myInput").value = "";
-    document.getElementById("taskStart").value = "";
-    document.getElementById("taskEnd").value = "";
-}

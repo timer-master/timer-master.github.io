@@ -21,23 +21,23 @@ body {
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;
-    background: #f9f9f9; /* Light background */
+    background: #f9f9f9; 
     font-size: 18px;
     transition: 0.2s;
-    color: #26303e; /* Dark text for readability */
-    border-bottom: 1px solid #eee; /* Subtle separator */
+    color: #26303e; 
+    border-bottom: 1px solid #eee;
   }
   
   ul li:nth-child(odd) {
-    background: #eee; /* Slight variation for odd items */
+    background: #eee; 
   }
   
   ul li:hover {
-    background: #87CEEB; /* Light blue on hover */
+    background: #87CEEB;
   }
   
   ul li.checked {
-    background: #005F99; /* Primary blue when checked */
+    background: #005F99; 
     color: white;
     text-decoration: line-through;
   }
