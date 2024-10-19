@@ -24,7 +24,7 @@ let timePassed = 0;
 let timeLeft = 0;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.normal.color;
-let TIME_LIMIT = 0; // Initialize TIME_LIMIT
+let TIME_LIMIT = 1200; // Initialize TIME_LIMIT
 let isPaused = false;
 // HTML Setup
 document.getElementById("countdownTimer").innerHTML = `
