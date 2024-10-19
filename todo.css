@@ -264,15 +264,15 @@ body {
 }
 
 .base-timer__path-remaining.green {
-  color: rgb(65, 184, 131);
+  stroke: rgb(65, 184, 131); /* Green color */
 }
 
 .base-timer__path-remaining.orange {
-  color: orange;
+  stroke: orange; /* Orange color */
 }
 
 .base-timer__path-remaining.red {
-  color: red;
+  stroke: red; /* Red color */
 }
 
 .base-timer__label {
