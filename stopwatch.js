@@ -32,8 +32,8 @@
        second = 0;
        count = 0;
        lapnum = 1;
-       laphr = 0;
-       lapmin = 0;
+       laphour = 0;
+       lapminute = 0;
        lapsecond = 0;
        lapcount = 0;
        document.getElementById('hr').innerHTML = "00";
@@ -97,7 +97,7 @@
     lapBtn.addEventListener('click', function (){
          laphr = hour;
          lapmin = minute;
-         lapsecond = second;
+         lapsec = second;
          lapcount = count;
          let laphrString = hour;
          let lapminString = minute;
@@ -122,7 +122,7 @@
 
          laphr = 0;
          lapmin = 0;
-         lapsecond = 0;
+         lapsec = 0;
          lapcount = 0;
 
             document.getElementById('laphr').innerHTML = laphrString;
