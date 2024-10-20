@@ -170,7 +170,7 @@
 }
 
 #dateInput {
-  background-color: #D0D3D4;
+  background-color: #f1f1f1;
   border: 2px solid #00BFFF;
   padding: 10px;
   margin: 5px;
@@ -179,7 +179,7 @@
 }
 
 #inputBoxHours{
-  background-color: #D0D3D4;
+  background-color: #f1f1f1;
   border: 2px solid #00BFFF;
   padding: 10px;
   margin: 5px;
@@ -188,7 +188,7 @@
 }
 
 #inputBoxMinutes{
-  background-color: #D0D3D4;
+  background-color: #f1f1f1;
   border: 2px solid #00BFFF;
   padding: 10px;
   margin: 5px;
@@ -197,7 +197,7 @@
 }
 
 #inputBoxSeconds{
-  background-color: #D0D3D4;
+  background-color: #f1f1f1;
   border: 2px solid #00BFFF;
   padding: 10px;
   margin: 5px;
