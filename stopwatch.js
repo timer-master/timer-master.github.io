@@ -104,19 +104,19 @@
          let lapsecString = second;
          let lapcountString = count;
 
-         if (hour < 10) {
+         if (laphour < 10) {
             hrString = "0" + hrString;
         }
 
-        if (minute < 10) {
+        if (lapminute < 10) {
             lapminString = "0" + lapminString;
         }
 
-        if (second < 10) {
+        if (lapsecond < 10) {
             lapsecString = "0" + lapsecString;
         }
 
-        if (count < 10) {
+        if (lapcount < 10) {
             lapcountString = "0" + lapcountString;
         }
 
