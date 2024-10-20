@@ -104,18 +104,6 @@
          let lapsecString = second;
          let lapcountString = count;
 
-        if (lapcountString != 0){
-            lapnum++;
-            laphr = 0;
-            lapmin = 0;
-            lapsecond = 0;
-            lapcount = 0;
-           laphrString = 0;
-           lapminString = 0;
-           lapsecString = 0;
-           lapcountString = 0;
-        }
-
             document.getElementById('laphr').innerHTML = laphrString;
             document.getElementById('lapmin').innerHTML = lapminString;
             document.getElementById('lapsec').innerHTML = lapsecString;
