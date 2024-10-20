@@ -32,10 +32,18 @@
        second = 0;
        count = 0;
        lapnum = 1;
+       laphr = 0;
+       lapmin = 0;
+       lapsecond = 0;
+       lapcount = 0;
        document.getElementById('hr').innerHTML = "00";
        document.getElementById('min').innerHTML = "00";
        document.getElementById('sec').innerHTML = "00";
        document.getElementById('count').innerHTML = "00";
+       document.getElementById('laphr').innerHTML = "00";
+       document.getElementById('lapmin').innerHTML = "00";
+       document.getElementById('lapsec').innerHTML = "00";
+       document.getElementById('lapcount').innerHTML = "00";
    });
    
    function stopWatch() {
