@@ -117,14 +117,14 @@
   width: 5%;
   border: none; */
   font-size: 20px;
-  border: 2px #dcce06;
+  border: 2px #f4e220;
   width: 7%;
   padding: 10px;
   margin: 5px;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  background-color: #dcce06;
+  background-color: #f4e220;
 }
 #submitInputBox {
   font-size: 20px;
