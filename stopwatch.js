@@ -12,6 +12,7 @@
    let lapminute = 0;
    let lapsecond = 0;
    let lapcount = 0;
+   let lapnum = 1;
 
    startBtn.addEventListener('click', function () {
     if (count == 0 && second == 0 || timer == false){
@@ -30,6 +31,7 @@
        minute = 0;
        second = 0;
        count = 0;
+       lapnum = 1;
        document.getElementById('hr').innerHTML = "00";
        document.getElementById('min').innerHTML = "00";
        document.getElementById('sec').innerHTML = "00";
@@ -93,7 +95,12 @@
          let lapminString = minute;
          let lapsecString = second;
          let lapcountString = count;
-         
+         lapnum++;
+         laphr = 0;
+         lapmin = 0;
+         lapsecond = 0;
+         lapcount = 0;
+
             document.getElementById('laphr').innerHTML = laphrString;
             document.getElementById('lapmin').innerHTML = lapminString;
             document.getElementById('lapsec').innerHTML = lapsecString;
