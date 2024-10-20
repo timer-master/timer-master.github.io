@@ -78,11 +78,6 @@
            let minString = minute;
            let secString = second;
            let countString = count;
-
-           let laphrString = laphour;
-           let lapminString = lapminute;
-           let lapsecString = lapsecond;
-           let lapcountString = lapcount;
    
            if (hour < 10) {
                hrString = "0" + hrString;
@@ -99,22 +94,6 @@
            if (count < 10) {
                countString = "0" + countString;
            }
-
-           if (laphour < 10) {
-                laphrString = "0" + laphrString;
-            }
-
-            if (lapminute < 10) {
-                lapminString = "0" + lapminString;
-            }
-
-            if (lapsecond < 10) {
-                lapsecString = "0" + lapsecString;
-            }
-
-            if (lapcount < 10) {
-                lapcountString = "0" + lapcountString;
-            }
    
            document.getElementById('hr').innerHTML = hrString;
            document.getElementById('min').innerHTML = minString;
@@ -128,16 +107,32 @@
        }
    }
     lapBtn.addEventListener('click', function (){
-         
+
+        let laphrString = laphour;
+        let lapminString = lapminute;
+        let lapsecString = lapsecond;
+        let lapcountString = lapcount;
+
+        if (laphour < 10) {
+            laphrString = "0" + laphrString;
+        }
+
+        if (lapminute < 10) {
+            lapminString = "0" + lapminString;
+        }
+
+        if (lapsecond < 10) {
+            lapsecString = "0" + lapsecString;
+        }
+
+        if (lapcount < 10) {
+            lapcountString = "0" + lapcountString;
+        }
+
          laphour = 0;
          lapminute = 0;
          lapsecond = 0;
          lapcount = 0;
-
-         laphrString = 0;
-         lapminString = 0;
-         lapsecString = 0;
-         lapcountString = 0;
 
             document.getElementById('laphr').innerHTML = laphrString;
             document.getElementById('lapmin').innerHTML = lapminString;
