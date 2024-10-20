@@ -195,13 +195,21 @@ function submitTime() {
   function minutesTooShort() {
     alert("Please enter a positive number for minutes.");
   }
+  function breakTooShort() {
+    alert("Please take a long break for the sake of your eyes.");
+  }
 
   // Validation
   if (screenTimeInput > 59) {
     screenTooLong();
-  } else if (screenTimeInput < 0 || breakTimeInput < 0) {
+  } 
+  else if (screenTimeInput < 0 || breakTimeInput < 0) {
     minutesTooShort();
-  } else {
+  } 
+  else if (screenTimeInput - breakTimeInput > 40) {
+    breakTooShort();
+  }
+  else {
     // Convert times to seconds
     SCREEN_TIME_LIMIT = screenTimeInput * 60;
     BREAK_TIME_LIMIT = breakTimeInput * 60;
