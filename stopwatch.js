@@ -127,7 +127,6 @@
         lapminute = 0;
         lapsecond = 0;
         lapcount = 0;
-        lapnum++;
     
         newLap();
     
@@ -139,6 +138,7 @@
                 newLap.innerText = "Lap " + lapnumString + ": " + laphrString + ":" + lapminString + ":" + lapsecString + "." + lapcountString;
                 
                 document.getElementById('lapList').appendChild(newLap);
+                lapnum++;
             }
         }
        });
