@@ -54,46 +54,27 @@
     <br />
 
     <div class="container">
-        <h1 class="title">Stopwatch</h1>
-        <div id="time">
-           <b><span class="digit" id="hr">
-                00</span></b>
-            <span class="txt">:</span>
-            <b><span class="digit" id="min">
-                00</span></b>
-            <span class="txt">:</span>
-            <b><span class="digit" id="sec">
-                00</span></b>
-            <span class="txt">.</span>
-            <b><span class="digit" id="count">
-                00</span></b>
-            <br>
-            <b>Lap</b>
-            <b><span class="digit" id="laphr">
-                00</span></b>
-            <span class="txt">:</span>
-            <b><span class="digit" id="lapmin">
-                 00</span></b>
-            <span class="txt">:</span>
-            <b><span class="digit" id="lapsec">
-                00</span></b>
-            <span class="txt">.</span>
-            <b><span class="digit" id="lapcount">
-                00</span></b>
-            </br>
-        </div>
-      <br>
-        <div id="buttons">
-            <button class="Start" id="start">
-                Start</button>
-            <button class="Stop" id="stop">
-                Stop</button>
-            <button class="Reset" id="reset">
-                Reset</button>
-            <button class="Lap" id="lap">
-                Lap</button>
-        </div>
-    </div>
+      <h1 class="title">Stopwatch</h1>
+      <div id="time">
+         <b><span class="digit" id="hr">00</span></b>
+         <span class="txt">:</span>
+         <b><span class="digit" id="min">00</span></b>
+         <span class="txt">:</span>
+         <b><span class="digit" id="sec">00</span></b>
+         <span class="txt">.</span>
+         <b><span class="digit" id="count">00</span></b>
+
+         <!-- Laps-->
+         <ul id="lapList"></ul>
+      </div>
+    <br>
+      <div id="buttons">
+          <button class="Start" id="start">Start</button>
+          <button class="Stop" id="stop">Stop</button>
+          <button class="Reset" id="reset">Reset</button>
+          <button class="Lap" id="lap">Lap</button>
+      </div>
+  </div>
 
     <script src="script.js"></script>
     <script src="stopwatch.js"></script>

@@ -195,6 +195,10 @@ html {
   padding-bottom: 22px;
 }
 
+.logoImg:hover img {
+  filter: brightness(0.8); /* Darkens the logo slightly */
+}
+
 .dropdown {
   float: left;
   overflow: hidden;

@@ -4,6 +4,12 @@
   margin: 20px 0;
   color: #333;
 }
+
+#lapList {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+}
+
 /* Countdown Timer Interface */
 #countdownTimer {
   margin-top: 20px;
