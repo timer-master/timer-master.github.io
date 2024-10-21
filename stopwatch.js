@@ -49,21 +49,29 @@
    function stopWatch() {
        if (timer) {
            count++;
+           lapcount++;
    
            if (count == 100) {
                second++;
+               lapsecond++;
                count = 0;
+               lapcount = 0;
            }
    
            if (second == 60) {
                minute++;
+               lapminute++;
                second = 0;
+               lapsecond = 0;
            }
    
            if (minute == 60) {
                hour++;
+               laphour++;
                minute = 0;
                second = 0;
+               lapminute = 0;
+               lapsecond = 0;
            }
    
            let hrString = hour;
@@ -95,34 +103,31 @@
        }
    }
     lapBtn.addEventListener('click', function (){
-         laphr = hour;
-         lapmin = minute;
-         lapsec = second;
-         lapcount = count;
-         let laphrString = hour;
-         let lapminString = minute;
-         let lapsecString = second;
-         let lapcountString = count;
 
-         if (laphrString < 10) {
+        let laphrString = laphour;
+        let lapminString = lapminute;
+        let lapsecString = lapsecond;
+        let lapcountString = lapcount;
+
+        if (laphour < 10) {
             laphrString = "0" + laphrString;
         }
 
-        if (lapminString < 10) {
+        if (lapminute < 10) {
             lapminString = "0" + lapminString;
         }
 
-        if (lapsecString < 10) {
+        if (lapsecond < 10) {
             lapsecString = "0" + lapsecString;
         }
 
-        if (lapcountString < 10) {
+        if (lapcount < 10) {
             lapcountString = "0" + lapcountString;
         }
 
-         laphr = 0;
-         lapmin = 0;
-         lapsec = 0;
+         laphour = 0;
+         lapminute = 0;
+         lapsecond = 0;
          lapcount = 0;
 
             document.getElementById('laphr').innerHTML = laphrString;
