@@ -99,10 +99,6 @@
            document.getElementById('min').innerHTML = minString;
            document.getElementById('sec').innerHTML = secString;
            document.getElementById('count').innerHTML = countString;
-           document.getElementById('laphr').innerHTML = laphrString;
-            document.getElementById('lapmin').innerHTML = lapminString;
-            document.getElementById('lapsec').innerHTML = lapsecString;
-            document.getElementById('lapcount').innerHTML = lapcountString;
            setTimeout(stopWatch, 10);
        }
    }
