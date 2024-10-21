@@ -131,6 +131,24 @@
          lapcount = 0;
          lapnum++;
 
+         let noteBank = document.querySelector(".note_bank");
+
+            let lapBtn = document.querySelector(".lap");
+            lapBtn.addEventListener('click', () => {
+            let newlap = document.createElement("div");
+            newlap.classList.add("new_lap");
+            newlap.addEventListener('click', function() {
+                this.classList.add('marked_for_deletion');
+                this.remove();
+            });
+
+            let lapText = document.createElement("p");
+            lapText.textContent = "New note text";
+            newlap.appendChild(lapText);
+
+            noteBank.appendChild(newlap);
+            });
+
             document.getElementById('laphr').innerHTML = laphrString;
             document.getElementById('lapmin').innerHTML = lapminString;
             document.getElementById('lapsec').innerHTML = lapsecString;
