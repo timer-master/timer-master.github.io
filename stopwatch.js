@@ -41,6 +41,7 @@
            document.getElementById('sec').innerHTML = "00";
            document.getElementById('count').innerHTML = "00";
            document.getElementById('lapList').innerHTML = "";
+           DocumentFragment.getElemantById('lapnumString').innerHTML = "0";
        });
        
        function stopWatch() {
