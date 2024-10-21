@@ -132,7 +132,7 @@
         newLap();
     
         function newLap() {
-            if (count != 0 && second != 0 && minute != 0 && hour != 0) {
+            if (timer == false) {
                     let lapnumString = lapnum.toString(); 
                 
                 const newLap = document.createElement('li'); 
