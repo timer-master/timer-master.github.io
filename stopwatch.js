@@ -132,7 +132,7 @@
         newLap();
     
         function newLap() {
-            if (timer == false) {
+            if (timer == true) {
                     let lapnumString = lapnum.toString(); 
                 
                 const newLap = document.createElement('li'); 
