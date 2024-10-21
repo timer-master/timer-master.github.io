@@ -129,6 +129,7 @@
          lapminute = 0;
          lapsecond = 0;
          lapcount = 0;
+         lapnum++;
 
             document.getElementById('laphr').innerHTML = laphrString;
             document.getElementById('lapmin').innerHTML = lapminString;
