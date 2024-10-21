@@ -132,11 +132,13 @@
         newLap();
     
         function newLap() {
-            let lapnumString = lapnum.toString(); 
-            
-            const newLap = document.createElement('li'); 
-            newLap.innerText = "Lap " + lapnumString + ": " + laphrString + ":" + lapminString + ":" + lapsecString + "." + lapcountString;
-            
-            document.getElementById('lapList').appendChild(newLap);
+            if (count != 0 && second != 0 && minute != 0 && hour != 0) {
+                    let lapnumString = lapnum.toString(); 
+                
+                const newLap = document.createElement('li'); 
+                newLap.innerText = "Lap " + lapnumString + ": " + laphrString + ":" + lapminString + ":" + lapsecString + "." + lapcountString;
+                
+                document.getElementById('lapList').appendChild(newLap);
+            }
         }
        });
