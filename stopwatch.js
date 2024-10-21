@@ -135,7 +135,7 @@
             let lapnumString = lapnum.toString(); 
             
             const newLap = document.createElement('li'); 
-            newLap.innerText = "Lap " + lapnumString + ": " + laphrString + ":" + lapminString + ":" + lapsecString + ":" + lapcountString;
+            newLap.innerText = "Lap " + lapnumString + ": " + laphrString + ":" + lapminString + ":" + lapsecString + "." + lapcountString;
             
             document.getElementById('lapList').appendChild(newLap);
         }
