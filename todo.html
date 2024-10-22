@@ -57,6 +57,26 @@
     <!--   title -->
     <h1 class="title">To Do</h1>
     <p>To help your task organization and time management, simply add your tasks and their deadlines below, and you'll recieve alarm reminders!</p>
+    <button class="button" onclick="reveal('guide')">Guide</button>
+    <br /><br />
+    <div class="alert" id="guide">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+      <li>
+        Enter your task name, and select your task start time and end time.
+        Press the “Add" button to add your task.
+      </li>
+      <li>
+        To set an alarm for task deadline, click the alarm icon. To ensure proper function,
+        please only set one alarm at a time. An alarm will ring at task deadline.
+      </li>
+      <li>
+        To mark a task as complete, click on the task name. To delete the task,
+        click on the "x" at the right.
+      </li>
+    </div>
+    <br />
     <div id="myDIV" class="header">
         <h2 style="margin:5px">My To Do List</h2> <br>
         <div class="input-group">

@@ -1,3 +1,13 @@
+// Reveal Dropdown
+function reveal(id) {
+    const element = document.getElementById(id);
+    if (element.style.display === "none" || element.style.display === "") {
+        element.style.display = "block"; // Use 'block' for alert
+    } else {
+        element.style.display = "none";
+    }
+}
+
 // Create a "close" button and append it to each list item
 function createCloseButton(listItem) {
     var span = document.createElement("SPAN");

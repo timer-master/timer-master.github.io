@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?  family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?  family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=timer" />
-    <meta name="viewport" content="width=device-width", initial-scale="1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=timer"
+    />
+    <meta name="viewport" content="width=device-width" , initial-scale="1" />
     <link rel="stylesheet" href="./todo.css" />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <title>Time Planner</title>
   </head>
 
@@ -19,7 +28,7 @@
     <header>
       <div class="navbar">
         <a class="logoImg" href="./index.html">
-          <img class="logo" src="./logo.png" height="38px" width="125px">
+          <img class="logo" src="./logo.png" height="38px" width="125px" />
         </a>
         <div class="dropdown">
           <button class="dropbtn">
@@ -56,33 +65,58 @@
 
     <!--   title -->
     <h1 class="title">Time Planner</h1>
-    <p>Plan your entire day by simply add your task and set the time, and we'll remind you with timers!</p>
+    <p>
+      Plan your entire day by simply add your task and set the time, and we'll
+      remind you with timers!
+    </p>
+    <button class="button" onclick="reveal('guide')">Guide</button>
+    <br /><br />
+    <div class="alert" id="guide">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+      <li>
+        Enter your task name, and select your task start time and end time.
+        Press the “Add" button to add your task.
+      </li>
+      <li>
+        To start your timer, click the timer icon. To ensure proper function,
+        please only set one timer at a time.
+      </li>
+      <li>
+        To mark a task as complete, click on the task name. To delete the task,
+        click on the "x" at the right.
+      </li>
+    </div>
+    <br />
+
     <div id="myDIV" class="header">
-        <h2 style="margin:5px">Today's List</h2> <br>
-        <div class="input-group">
-          <label for="myInput">Task Name:</label>
-          <input type="text" id="myInput" placeholder="Name your task">
-          <label for="myInput">Start Time:</label>
-          <input type="datetime-local" id="taskStart">  
-          <label for="myInput">End Time:</label>
-          <input type="datetime-local" id="taskEnd">  
-          <button onclick="newElement()" class="addBtn">Add</button>
-        </div>
+      <h2 style="margin: 5px">Today's List</h2>
+      <br />
+      <div class="input-group">
+        <label for="myInput">Task Name:</label>
+        <input type="text" id="myInput" placeholder="Name your task" />
+        <label for="myInput">Start Time:</label>
+        <input type="datetime-local" id="taskStart" />
+        <label for="myInput">End Time:</label>
+        <input type="datetime-local" id="taskEnd" />
+        <button onclick="newElement()" class="addBtn">Add</button>
       </div>
-      
-      <ul id="myUL">
-        <audio id="alarmAudio">
-          <source src="alarm.mp3" type="audio/mpeg">
-        </audio>
-      </ul>
-      <div id="countdownTimer"></div>
+    </div>
+
+    <ul id="myUL">
+      <audio id="alarmAudio">
+        <source src="alarm.mp3" type="audio/mpeg" />
+      </audio>
+    </ul>
+    <br />
+    <div id="countdownTimer"></div>
 
     <footer class="footer">
       <small
         >Copyright 2024 by the developers of Timer Master. All rights reserved.
         Not to be copied without permission.</small
       >
-
     </footer>
 
     <!--   javascript -->
