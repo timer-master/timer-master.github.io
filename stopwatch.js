@@ -12,7 +12,7 @@
        let lapminute = 0;
        let lapsecond = 0;
        let lapcount = 0;
-       let lapnum = 0;
+       let lapnum = 1;
     
        startBtn.addEventListener('click', function () {
         if (count == 0 && second == 0 || timer == false){
@@ -31,7 +31,7 @@
            minute = 0;
            second = 0;
            count = 0;
-           lapnum = 0;
+           lapnum = 1;
            laphour = 0;
            lapminute = 0;
            lapsecond = 0;
@@ -41,6 +41,7 @@
            document.getElementById('sec').innerHTML = "00";
            document.getElementById('count').innerHTML = "00";
            document.getElementById('lapList').innerHTML = "";
+           document.getElemantById('lapnumString').innerHTML = "1";
        });
        
        function stopWatch() {
@@ -127,16 +128,18 @@
         lapminute = 0;
         lapsecond = 0;
         lapcount = 0;
-        lapnum++;
     
         newLap();
     
         function newLap() {
-            let lapnumString = lapnum.toString(); 
-            
-            const newLap = document.createElement('li'); 
-            newLap.innerText = "Lap " + lapnumString + ": " + laphrString + ":" + lapminString + ":" + lapsecString + ":" + lapcountString;
-            
-            document.getElementById('lapList').appendChild(newLap);
+            if (timer == true) {
+                    let lapnumString = lapnum.toString(); 
+                
+                const newLap = document.createElement('li'); 
+                newLap.innerText = "Lap " + lapnumString + ": " + laphrString + ":" + lapminString + ":" + lapsecString + "." + lapcountString;
+                
+                document.getElementById('lapList').appendChild(newLap);
+                lapnum++;
+            }
         }
        });
