@@ -247,11 +247,16 @@ body {
 
   .alert {
     padding: 20px;
-    background-color: #005F99;
-    color: white;
+    background-color: #04a9e0;
+    color: black;
     display: none;
+    text-align: left;
   }
   
+.list {
+  margin-left: 14%;
+}
+
   .closebtn {
     margin-left: 15px;
     color: white;
