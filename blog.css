@@ -11,6 +11,13 @@
     background-color: #41B883;
   }
   
+.blog {
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-indent: 50px;
+  }
+
 
 /*Divider*/
 hr.divider {
@@ -30,7 +37,21 @@ html {
 
 .title {
   font-family: "Montserrat", Arial, sans-serif;
-}
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #333;
+ }
+
+
+.heading {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+  }
+  
 
 /* Center Alignment */
 .center {

@@ -475,12 +475,12 @@ html {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Title */
 .title {
-  margin: 5px;
-  font-size: 50;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #333;
 }
-
 /* Footer */
 .footer {
   color: black;
