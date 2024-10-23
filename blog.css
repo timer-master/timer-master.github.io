@@ -90,7 +90,7 @@ html {
 .navbar a:hover{
   background-color:  #93ccea;
   color: black;
-  /* padding-bottom: 22px; */
+  padding-bottom: 22px;
 }
 
 .logoImg:hover img {
