@@ -61,6 +61,7 @@ const COLOR_CODES = {
     },
   };
 // Timer Variables
+let isgoing = false;
 let timePassed = 0;
 let timeLeft = 0;
 let timerInterval = null;
@@ -96,6 +97,7 @@ function setupTimer() {
 
 // Timer Functions
 function startTimer() {
+    isgoing = true;
     timerInterval = setInterval(() => {
         timeLeft = TIME_LIMIT - timePassed;
 
@@ -216,6 +218,8 @@ function newElement() {
         TIME_LIMIT = duration;
         timePassed = 0; // Reset time passed for each new timer
         setupTimer(); // Setup the timer interface
-        startTimer();
+        if(isgoing==false){
+            startTimer(); // Start timer
+          }
     };
 }
