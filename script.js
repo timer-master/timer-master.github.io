@@ -19,7 +19,7 @@ function submit() {
 // Index typing
 
 var i = 0;
-var txt = 'Time management is a challenge for students and adults alike in today’s fast-paced world, often leading to stress and decreased productivity. But not to worry, Timer Master is here to help. With various proven time management, we can help you increase your efficiency and maximize your time. Experience the benefits of effective time management with Timer Master and unlock a more productive, fulfilling life.';
+var txt = 'Time management is a challenge for students and adults alike in today’s fast-paced world, often leading to stress and decreased productivity. But not to worry, Timer Master is here to help. With various proven time management strategies, we can help you increase your efficiency and maximize your time. Experience the benefits of effective time management with Timer Master and unlock a more productive, fulfilling life.';
 var speed = 40;
 
 function typeWriter() {
