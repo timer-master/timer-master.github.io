@@ -15,7 +15,7 @@
        let lapnum = 1;
     
        startBtn.addEventListener('click', function () {
-        if (count == 0 && second == 0 || timer == false){
+        if (count == 0 && second == 0 && minute == 0 || timer == false){
             timer = true;
            stopWatch();
         }    
@@ -41,7 +41,7 @@
            document.getElementById('sec').innerHTML = "00";
            document.getElementById('count').innerHTML = "00";
            document.getElementById('lapList').innerHTML = "";
-           document.getElemantById('lapnumString').innerHTML = "1";
+           document.getElementById('lapnumString').innerHTML = "1";
        });
        
        function stopWatch() {
