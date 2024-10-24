@@ -9,6 +9,15 @@ const holidays = [
   "valentines",
   "stPatricks",
   "easter",
+  "memorialDay",
+  "independenceDay",
+  "laborDay",
+  "hanukkah",
+  "ramadan",
+  "eidAlFitr",
+  "eidAlAdha",
+  "passover",
+  "goodFriday"
 ];
 
 const holidayDates = {
@@ -21,7 +30,17 @@ const holidayDates = {
   valentines: new Date("2025-02-14"),
   stPatricks: new Date("2025-03-17"),
   easter: new Date("2025-04-20"), // DATE VARIES: Easter Sunday
+  memorialDay: new Date("2025-05-26"), // DATE VARIES: Last Monday of May
+  independenceDay: new Date("2025-07-04"),
+  laborDay: new Date("2025-09-01"), // DATE VARIES: First Monday of September
+  hanukkah: new Date("2024-12-25"), // DATE VARIES
+  ramadan: new Date("2025-03-28"), // DATE VARIES
+  eidAlFitr: new Date("2025-04-27"), // DATE VARIES
+  eidAlAdha: new Date("2025-06-05"), // DATE VARIES
+  passover: new Date("2025-04-12"), // DATE VARIES
+  goodFriday: new Date("2025-04-18") // DATE VARIES
 };
+
 
 // Set countdowns for each holiday:
 function setHolidayCountdown(holidayName, holidayDate) {
